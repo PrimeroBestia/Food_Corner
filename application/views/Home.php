@@ -38,7 +38,7 @@
                         <li><a href="index.html" class="scroll-link" data-id="book-table">Order Now</a></li>
                         <li><a href="RecipeB.html">Recipe Book</a></li>
                         <li><a href="AboutUs.html">About Us</a></li>
-                        <li><a href="Login">Sign up</a></li>
+                        <li><a href="LoginView">Sign up</a></li>
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->
