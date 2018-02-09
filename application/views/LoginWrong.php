@@ -36,6 +36,7 @@
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <h1>Log in</h1>
+                            Invalid Input or Username/Password is Wrong
                             <form  action="Login" autocomplete="on">
                                 <p>
                                     <label for="username" class="uname" data-icon="u" >Email or Username </label>
