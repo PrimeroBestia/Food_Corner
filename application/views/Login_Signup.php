@@ -36,7 +36,7 @@
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <h1>Log in</h1>
-                            <form  action="Login" autocomplete="on">
+                            <form  action="" autocomplete="on" method="post">
                                 <p>
                                     <label for="username" class="uname" data-icon="u" >Email or Username </label>
                                     <input id="username" name="username" required="required" type="text" placeholder="john@mail.com or john01"/>
@@ -45,13 +45,20 @@
                                     <label for="password" class="youpasswd" data-icon="p"> Password </label>
                                     <input id="password" name="password" required="required" type="password" placeholder="*********" />
                                 </p>
-                                <p class="keeplogin">
+                                <!-- <p class="keeplogin">
 									                <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
 									                 <label for="loginkeeping">Keep me logged in</label>
-								                </p>
-                                <p class="login button">
-                                    <input type="submit" value="Login" />
-								                 </p>
+								                </p> -->
+                               <p class="login button">
+                                   <input type="submit" name="Submit" value="Login" />
+                                </p>
+                                <?php
+                                  session_start();
+                                   if (isset($_POST['Submit'])) {
+                                   $_session['username'] = $_POST['username'];
+                                   $_session['password'] = $_POST['password'];
+                                   }
+                                 ?>
                             </form>
                                             <p class="change_link">
             									Don't have an account?
