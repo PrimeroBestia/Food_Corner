@@ -3,17 +3,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 	public function _constructor(){
 		parent::_constructor();
+		$this->load->model('customer_model');
 	}
 	public function index()
 	{
-	$this ->load->model("customer_model");
-	$resultU = get_username($_session['username']);
-	$resultP = get_password($_session['username']);
+	$resultU = $this.get_username($_SESSION['username']);
+	$resultP = $this.get_password($_SESSION['username']);
 	if($resultU==NULL){
-		echo "Invalid Login";
+		$_SESSION['result']="Invalid Login!";
+		$this->load->view('Login_Signup');
 	}
 	else if($resultP==$session['password']){
 		$this->load->view('LoginHomePage');
+	}
+	else{
+		echo "hello";
 	}
 	}
 }
