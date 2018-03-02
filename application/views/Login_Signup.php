@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+    <?php
+    // Start the session
+    session_start();
+    ?>
     <head>
         <meta charset="UTF-8" />
         <title>Food Corner</title>
@@ -36,7 +40,8 @@
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <h1>Log in</h1>
-                            <form  action="" autocomplete="on" method="post">
+                            <? echo $_session['result'];?>
+                            <form  action="Login" autocomplete="on" method="post">
                                 <p>
                                     <label for="username" class="uname" data-icon="u" >Email or Username </label>
                                     <input id="username" name="username" required="required" type="text" placeholder="john@mail.com or john01"/>
@@ -52,14 +57,13 @@
                                <p class="login button">
                                    <input type="submit" name="Submit" value="Login" />
                                 </p>
-                                <?php
-                                  session_start();
-                                   if (isset($_POST['Submit'])) {
-                                   $_session['username'] = $_POST['username'];
-                                   $_session['password'] = $_POST['password'];
-                                   }
-                                 ?>
                             </form>
+                              <?php
+                               if (isset($_POST['Submit'])) {
+                               $_SESSION['username'] = $_POST['username'];
+                               $_SESSION['password'] = $_POST['password'];
+                               }
+                               ?>
                                             <p class="change_link">
             									Don't have an account?
             									         <a href="#toregister" class="to_register">Sign up</a>
