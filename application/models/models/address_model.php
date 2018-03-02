@@ -31,7 +31,7 @@ class customer_model extends CI_Model {
     
     public function delete_suppliers($add){
 
-    	$this->db->select('*');
+    		$this->db->select('*');
 		$this->db->from('address');
 		$this->db->where('address_ID', $add);
 		$query = $this->db->get();
