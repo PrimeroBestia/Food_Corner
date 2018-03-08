@@ -23,6 +23,6 @@ class LoginView extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('Login_Signup');
+		$this->load->view('login/Login_Signup');
 	}
 }
