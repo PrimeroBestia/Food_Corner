@@ -23,6 +23,6 @@ class ProfileView extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('profile');
+		$this->load->view('profile/profile');
 	}
 }
