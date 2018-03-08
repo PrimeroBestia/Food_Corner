@@ -5,19 +5,35 @@ class Login extends CI_Controller {
 		parent::_constructor();
 		$this->load->model('customer_model','customer');
 	}
-	public function index()
-	{
-	$resultU = $this->customer->get_username($_SESSION['username']);
-	$resultP = $this->custumer->get_password($_SESSION['username']);
-	if($resultU===NULL){
-		$_SESSION['result']="Invalid Login!";
-		$this->load->view('Login_Signup');
+	public function logins(){
+		$data['title'] = 'Sign up';
+		$this->form_validation->set_rules('username','Username','required');
+		$this->form_validation->set_rules('password','Password','required');
+		if($this->form_validation->run()===FALSE){
+			$this->load->view('login/Login_Signup');
+		}else{
+			//Encryption
+			$enc_pass = md5($this->input->post('password'));
+			$resultU->customer->get_username($this->input->post('username'));
+			$resultP->customer->get_password($this->input->post('username'));
+		}
 	}
-	else if($resultP===$session['password']){
-		$this->load->view('LoginHomePage');
-	}
-	else{
-		echo "hello";
-	}
+	public function register(){
+		$data['title'] = 'Sign up';
+		$this->form_validation->set_rules('fname','Fname','required');
+		$this->form_validation->set_rules('mname','Mname','required');
+		$this->form_validation->set_rules('lname','Lname','required');
+		$this->form_validation->set_rules('email','Emal','required');
+		$this->form_validation->set_rules('username','Username','required');
+		$this->form_validation->set_rules('password','Password','required');
+		$this->form_validation->set_rules('phone','Phone','required');
+		$this->form_validation->set_rules('caddress','caddress','required');
+		if($this->form_validation->run()===FALSE){
+				$this->load->view('login/Login_Signup');
+		}else{
+			//Encryption
+			$enc_pass = md5($this->input->post('password'));
+		}
 	}
 }
+?>
