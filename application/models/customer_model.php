@@ -51,5 +51,18 @@ class customer_model extends CI_Model {
 			return 1;
 		}
 	}
-
+	public function register($enc_pass){
+		$user = 'user';
+		$data = array(
+			'c_fname' =>$this->input->post('fname'),
+			'c_mname' =>$this->input->post('mname'),
+			'c_lname' =>$this->input->post('lname'),
+			'c_email' =>$this->input->post('email'),
+			'c_id' =>$this->input->post('username'),
+			'c_pass' =>$enc_pass,
+			'c_pno' =>$this->input->post('phone'),
+			'acc_type' =>$user
+		);
+		return $this->db->insert('customer',$data);
+	}
 }

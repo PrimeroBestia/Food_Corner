@@ -1,6 +1,6 @@
 <?php
 
-class customer_model extends CI_Model {
+class odelivery_model extends CI_Model {
 
 	public function __construct() {
 		parent:: __construct();
@@ -16,7 +16,7 @@ class customer_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('order_delivery');
 		$query=$this->db->get();
-		return=$query->result_array();
+		return $query->result_array();
 	}
 	public function update_delivery($delivery){
 		$query=$this->db->query("UPDATE delivery_id FROM order_delivery where order_id = ".$delivery);
