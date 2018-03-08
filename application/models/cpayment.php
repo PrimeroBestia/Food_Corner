@@ -1,22 +1,15 @@
 <?php
 
-class caddress_model extends CI_Model{
-	publick function __construct()
+class cpayment extends CI_Model{
+	public function __construct(){
 			parent:: __construct();
 	}
 
 	public function customer_payment(){
-
-		$this->db->select('*');
-		$this->db->from('customer');
-		$this->db->where('username', $username);
-		$this->db->where('password', $password);
-		$query=$this->db->get();
-		return=$query->result_array();
 		$this->db->select('*');
 		$this->db->from('customer_payment');
 		$query=$this->db->get();
-		return=$query->result_array();
+		return $query->result_array();
 	}
 	public function get_password($username){
 			$query=$this->db->query("SELECT c_pass FROM customer where c_id = ".$username);

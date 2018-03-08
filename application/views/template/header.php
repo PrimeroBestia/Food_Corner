@@ -8,12 +8,12 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="assets/FoodC/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/FoodC/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="assets/FoodC/css/fontAwesome.css">
-        <link rel="stylesheet" href="assets/FoodC/css/hero-slider.css">
-        <link rel="stylesheet" href="assets/FoodC/css/owl-carousel.css">
-        <link rel="stylesheet" href="assets/FoodC/css/templatemo-style.css">
+        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/bootstrap.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/bootstrap-theme.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/fontAwesome.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/hero-slider.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/owl-carousel.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/templatemo-style.css'); ?>">
 
         <link href="https://fonts.googleapis.com/css?family=Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
@@ -37,7 +37,7 @@
                         <li><a href="">Order Now</a></li>
                         <li><a href="">Recipe Book</a></li>
                         <li><a href="AboutUsView">About Us</a></li>
-                        <li><a href="LoginView">Sign up</a></li>
+                        <li><a href="LoginView">Log In</a></li>
                     </ul>
                 </div>
             </nav>

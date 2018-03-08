@@ -1,6 +1,6 @@
 <?php
 
-class customer_model extends CI_Model {
+class suppliers_model extends CI_Model {
 
 	public function __construct() {
 		parent:: __construct();
@@ -23,7 +23,7 @@ class customer_model extends CI_Model {
 		return $result;
 	}
 	
-	public function upadte_suppliers($id,$sup){
+	public function update_suppliers($id,$sup){
 
 		$this->db->where('s_id', $id);
 		$this->db->update('suppliers', $sup);
@@ -38,10 +38,5 @@ class customer_model extends CI_Model {
 		$result = $query->result();
 		return $result;
     }
-	public function delete_suppliers($sup){
-
-		$this->db->where('s_id', $sup);
-		$this->db->delete('suppliers');
-	}
 
 }

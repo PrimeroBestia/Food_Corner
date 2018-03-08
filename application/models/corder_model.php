@@ -1,7 +1,7 @@
 <?php
 
-class caddress_model extends CI_Model{
-	publick function __construct()
+class corder_model extends CI_Model{
+	public function __construct(){
 			parent:: __construct();
 	}
 
@@ -16,7 +16,7 @@ class caddress_model extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('customer_order');
 		$query=$this->db->get();
-		return=$query->result_array();
+		return $query->result_array();
 	}
 	public function get_password($username){
 			$query=$this->db->query("SELECT c_pass FROM customer where c_id = ".$username);

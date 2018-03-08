@@ -1,6 +1,6 @@
 <?php
 
-class customer_model extends CI_Model {
+class recipe_model extends CI_Model {
 
 	public function __construct() {
 		parent:: __construct();
@@ -38,10 +38,4 @@ class customer_model extends CI_Model {
 		$result = $query->result();
 		return $result;
     }
-	public function delete_suppliers($rec){
-
-		$this->db->where('r_id', $rec);
-		$this->db->delete('recipe');
-	}
-
 }

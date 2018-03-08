@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 	public function _constructor(){
 		parent::_constructor();
-		$this->load->model('customer_model','customer');
 	}
 	public function logins(){
 		$data['title'] = 'Sign up';
@@ -14,8 +13,6 @@ class Login extends CI_Controller {
 		}else{
 			//Encryption
 			$enc_pass = md5($this->input->post('password'));
-			$resultU->customer->get_username($this->input->post('username'));
-			$resultP->customer->get_password($this->input->post('username'));
 		}
 	}
 	public function register(){
@@ -33,6 +30,9 @@ class Login extends CI_Controller {
 		}else{
 			//Encryption
 			$enc_pass = md5($this->input->post('password'));
+			$this->customer_model->register($enc_pass);
+			$this->session->set_flashdata('user_registered','Successfully Registered! and you can now log in');
+			redirect('Welcome');
 		}
 	}
 }

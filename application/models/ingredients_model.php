@@ -1,6 +1,6 @@
 <?php
 
-class customer_model extends CI_Model {
+class ingredients_model extends CI_Model {
 
 	public function __construct() {
 		parent:: __construct();
@@ -16,7 +16,7 @@ class customer_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('ingredients');
 		$query=$this->db->get();
-		return=$query->result_array();
+		return $query->result_array();
 	}
 	public function update_ingredients($suppliers){
 		$query=$this->db->query("UPDATE ing_id FROM ingredients where s_id = ".$suppliers);
