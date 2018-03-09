@@ -40,11 +40,11 @@
                             <?php echo form_open('login/logins');?>
                                 <p>
                                     <label for="username" class="uname" data-icon="u" >Username </label>
-                                    <input id="username" name="username" type="text" placeholder="Username"/>
+                                    <input id="username" name="username" type="text" required placeholder="Username"/>
                                 </p>
                                 <p>
                                     <label for="password" class="youpasswd" data-icon="p"> Password </label>
-                                    <input id="password" name="password" type="password" placeholder="*********" />
+                                    <input id="password" name="password" type="password" required placeholder="*********" />
                                 </p>
                                 <!-- <p class="keeplogin">
 									                <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />

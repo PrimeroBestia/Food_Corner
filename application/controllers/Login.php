@@ -6,14 +6,14 @@ class Login extends CI_Controller {
 	}
 	public function logins(){
 		$data['title'] = 'Sign up';
-		$this->form_validation->set_rules('username','Username','required');
-		$this->form_validation->set_rules('password','Password','required');
+		$this->form_validation->set_rules('username','Username','required|callback_check_usernames');
+		$this->form_validation->set_rules('password','Password','required|callback_check_password');
 		if($this->form_validation->run()===FALSE){
 			$this->load->view('login/Login_Signup');
 		}else{
-			//Encryption
-			$enc_pass = md5($this->input->post('password'));
-
+			$_SESSION['username'] = $this->input->post('username');
+			$this->session->set_flashdata('user_registered','You have Successfully logged in.');
+			redirect('Welcome');
 		}
 	}
 	public function register(){
@@ -32,7 +32,7 @@ class Login extends CI_Controller {
 		}else{
 			//Encryption
 			session_start();
-			$enc_pass = md5($this->input->post('password'));
+			$enc_pass = $this->input->post('password');
 			$this->customer_model->register($enc_pass);
 			$this->customer_model->address_insert($this->input->post('username'));
 			$this->session->set_flashdata('user_registered','Successfully Registered! and you can now log in');
@@ -54,6 +54,24 @@ class Login extends CI_Controller {
 			return true;
 		}else{
 			//Encryption
+			return false;
+		}
+	}
+	function check_usernames($username){
+		$this->form_validation->set_message('check_usernames','The Username is wrong.');
+		if($this->customer_model->check_username($username)){
+			return true;
+		}else{
+			//Encryption
+			return false;
+		}
+	}
+	function check_password($username){
+		$password = md5($this->input->post('password'));
+		$this->form_validation->set_message('check_password','The Password is wrong');
+		if($this->customer_model->check_password($password)){
+			return true;
+		}else{
 			return false;
 		}
 	}

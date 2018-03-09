@@ -22,9 +22,15 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-		$this->load->view('template/header');
-		$this->load->view('home/Home');
-		$this->load->view('template/footer');
+	{	if (!isset($_SESSION['username'])) {
+			$this->load->view('template/header');
+			$this->load->view('home/Home');
+			$this->load->view('template/footer');
+		}
+		else{
+			$this->load->view('template/headerlogin');
+			$this->load->view('home/Home');
+			$this->load->view('template/footer');
+		}	
 	}
 }

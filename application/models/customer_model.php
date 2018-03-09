@@ -86,14 +86,38 @@ class customer_model extends CI_Model {
 	public function address_insert($username){
 		$query=$this->db->get_where('customer',array('c_id'=>$username));
 		$address;
+		$addressid =1;
 		foreach ($query->result_array() as $key) {
 			$address = $key['c_address_id'];
 		}
 		$data = array(
 			'caddress_id' =>$address,
 			'c_id' =>$this->input->post('username'),
-			'address' =>$this->input->post('caddress')
+			'address' =>$this->input->post('caddress'),
+			'address_id' =>$addressid
 		);
 		return $this->db->insert('customer_address',$data);
+	}
+	public function check_username($username){
+		$query=$this->db->get_where('customer',array('c_id'=>$username));
+		if(empty($query->row_array())){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	public function check_password($password){
+		$pass = $password;
+		$username = $this->input->post('username');
+		$this->db->where('c_id',$username);
+		$this->db->where('c_pass',$pass);
+		$result = $this->db->get('customer');
+		if($result->num_rows() == 1){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 }
