@@ -63,6 +63,37 @@ class customer_model extends CI_Model {
 			'c_pno' =>$this->input->post('phone'),
 			'acc_type' =>$user
 		);
-		return $this->db->insert('customer',$data);
+		return$this->db->insert('customer',$data);
+	}
+	public function check_username_exists($username){
+		$query=$this->db->get_where('customer',array('c_id'=>$username));
+		if(empty($query->row_array())){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public function check_email_exists($email){
+		$query=$this->db->get_where('customer',array('c_email'=>$email));
+		if(empty($query->row_array())){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public function address_insert($username){
+		$query=$this->db->get_where('customer',array('c_id'=>$username));
+		$address;
+		foreach ($query->result_array() as $key) {
+			$address = $key['c_address_id'];
+		}
+		$data = array(
+			'caddress_id' =>$address,
+			'c_id' =>$this->input->post('username'),
+			'address' =>$this->input->post('caddress')
+		);
+		return $this->db->insert('customer_address',$data);
 	}
 }

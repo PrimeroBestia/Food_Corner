@@ -43,5 +43,7 @@
             </nav>
         </div>
     </div>
-
   <div>
+    <?php if($this->session->flashdata('user_registered')): ?>
+        <?php echo '<p class = "alert alert-success">'.$this->session->flashdata('user_registered').'</p>';?>
+    <?php session_destroy();endif;?>

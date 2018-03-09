@@ -40,11 +40,11 @@
                             <?php echo form_open('login/logins');?>
                                 <p>
                                     <label for="username" class="uname" data-icon="u" >Username </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="Username"/>
+                                    <input id="username" name="username" type="text" placeholder="Username"/>
                                 </p>
                                 <p>
                                     <label for="password" class="youpasswd" data-icon="p"> Password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="*********" />
+                                    <input id="password" name="password" type="password" placeholder="*********" />
                                 </p>
                                 <!-- <p class="keeplogin">
 									                <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
@@ -66,39 +66,39 @@
                                 <h1> Sign up </h1>
                                 <p>
                                     <label for="usernamesignup" class="uname" data-icon="u">First Name</label>
-                                    <input id="usernamesignup" name="fname" required="required" type="text" placeholder="John" />
+                                    <input id="usernamesignup" name="fname"  type="text" placeholder="John" />
                                 </p>
                                 <p>
                                     <label for="usernamesignup" class="uname" data-icon="u">Middle Name</label>
-                                    <input id="usernamesignup" name="mname" required="required" type="text" placeholder="Beck" />
+                                    <input id="usernamesignup" name="mname"  type="text" placeholder="Beck" />
                                 </p>
                                 <p>
                                     <label for="usernamesignup" class="uname" data-icon="u">Last Name</label>
-                                    <input id="usernamesignup" name="lname" required="required" type="text" placeholder="Doe" />
+                                    <input id="usernamesignup" name="lname"  type="text" placeholder="Doe" />
                                 </p>
                                 <p>
                                     <label for="usernamesignup" class="uname" data-icon="u">Username</label>
-                                    <input id="usernamesignup" name="username" required="required" type="text" placeholder="Username" />
+                                    <input id="usernamesignup" name="username"  type="text" placeholder="Username" />
                                 </p>
                                 <p>
                                     <label for="emailsignup" class="youmail" data-icon="e" > Email</label>
-                                    <input id="emailsignup" name="email" required="required" type="email" placeholder="john@mail.com"/>
+                                    <input id="emailsignup" name="email"  type="email" placeholder="john@mail.com"/>
                                 </p>
                                 <p>
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">Password </label>
-                                    <input id="passwordsignup" name="password" required="required" type="password" placeholder="*********"/>
+                                    <input id="passwordsignup" name="password"  type="password" placeholder="*********"/>
                                 </p>
                                 <p>
                                     <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="cpassword" required="matches[password]" type="password" placeholder="*********"/>
+                                    <input id="passwordsignup_confirm" name="cpassword"  type="password" placeholder="*********"/>
                                 </p>
                                 <p>
                                     <label for="usernamesignup" class="uname" data-icon="u">Phone</label>
-                                    <input id="usernamesignup" name="phone" required="required" type="text" placeholder="0999-999-9999" />
+                                    <input id="usernamesignup" name="phone"  type="text" placeholder="0999-999-9999" />
                                 </p>
                                 <p>
                                     <label for="usernamesignup" class="uname" data-icon="u">Address</label>
-                                    <input id="usernamesignup" name="caddress" required="required" type="text" placeholder="123 Layo St. Daan District, Manila, Philippines" />
+                                    <input id="usernamesignup" name="caddress"  type="text" placeholder="123 Layo St. Daan District, Manila, Philippines" />
                                 </p>
                                 <p class="signin button">
 									                         <input type="submit" value="Sign up"/>
