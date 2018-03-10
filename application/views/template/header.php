@@ -18,32 +18,29 @@
         <link href="https://fonts.googleapis.com/css?family=Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
+        <div class="header">
+                <nav class="navbar navbar-inverse" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="main-nav" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="Welcome">Home</a></li>
+                            <li><a href="RecipeBook">Recipe Book</a></li>
+                            <li><a href="AboutUsView">About Us</a></li>
+                            <li><a href="LoginView">Log In</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
     </head>
-
 <body>
-    <div class="header">
-            <nav class="navbar navbar-inverse" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div id="main-nav" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="Welcome">Home</a></li>
-                        <li><a href="">Order Now</a></li>
-                        <li><a href="">Recipe Book</a></li>
-                        <li><a href="AboutUsView">About Us</a></li>
-                        <li><a href="LoginView">Log In</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
-  <div>
+    <div>
     <?php if($this->session->flashdata('user_registered')): ?>
         <?php echo '<p class = "alert alert-success">'.$this->session->flashdata('user_registered').'</p>';?>
     <?php session_destroy();endif;?>
