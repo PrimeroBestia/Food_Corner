@@ -7,7 +7,6 @@ class customer_model extends CI_Model {
 	}
 
 	public function validate($data) {
-
 		$this->db->select('*');
 		$this->db->from($this->table);
 		$this->db->where('username', $username);
@@ -107,11 +106,9 @@ class customer_model extends CI_Model {
 			return true;
 		}
 	}
-	public function check_password($password){
-		$pass = $password;
-		$username = $this->input->post('username');
+	public function check_account($password,$username){
 		$this->db->where('c_id',$username);
-		$this->db->where('c_pass',$pass);
+		$this->db->where('c_pass',$password);
 		$result = $this->db->get('customer');
 		if($result->num_rows() == 1){
 			return true;

@@ -4,23 +4,32 @@ class Login extends CI_Controller {
 	public function _constructor(){
 		parent::_constructor();
 	}
+	public function index(){
+		redirect(base_url());
+	}
 	public function logins(){
 		$data['title'] = 'Sign up';
-		$this->form_validation->set_rules('username','Username','required|callback_check_usernames');
-		$this->form_validation->set_rules('password','Password','required|callback_check_password');
+		$this->form_validation->set_rules('username','Username','required');
+		$this->form_validation->set_rules('password','Password','required');
 		if($this->form_validation->run()===FALSE){
 			$this->load->view('login/Login_Signup');
 		}else{
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+			if($this->customer_model->check_account($password,$username)){
+			session_start();
 			$_SESSION['username'] = $this->input->post('username');
 			$this->session->set_flashdata('user_registered','You have Successfully logged in.');
 			redirect('Welcome');
+			}
+			else{
+				$this->session->set_flashdata('wrong','Username or Password is wrong');
+				$this->load->view('login/Login_Signup');
+			}
 		}
 	}
 	public function register(){
 		$data['title'] = 'Sign up';
-		$this->form_validation->set_rules('fname','First Name','required');
-		$this->form_validation->set_rules('mname','Middle Name','required');
-		$this->form_validation->set_rules('lname','Last Name','required');
 		$this->form_validation->set_rules('email','Emal','required|callback_check_email');
 		$this->form_validation->set_rules('username','username','required|callback_check_username');
 		$this->form_validation->set_rules('password','Password','required');
@@ -28,7 +37,7 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('phone','Phone','required');
 		$this->form_validation->set_rules('caddress','Address','required');
 		if($this->form_validation->run()===FALSE){
-				$this->load->view('login/Login_Signup');
+				$this->load->view('login/Signups');
 		}else{
 			//Encryption
 			session_start();

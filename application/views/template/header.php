@@ -39,6 +39,7 @@
                             <li><a href="RecipeBook">Recipe Book</a></li>
                             <li><a href="AboutUsView">About Us</a></li>
                             <li><a href="LoginView">Log In</a></li>
+                            <li><a href="SignupView">Sign Up</a></li>
                         </ul>
                     </div>
                 </nav>
