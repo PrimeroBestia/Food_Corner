@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" class="demo-3 no-js">
 	<head>
+	</head>
+	<body>
 		<title> Eastern Dishes </title>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 	
 		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo2.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/snap.svg-min.js"></script
-	</head>
-	<body>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Recipe/css/normalize.css'); ?>" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Recipe/css/demo2.css'); ?>" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Recipe/css/component.css'); ?>" />
+		<script src="js/snap.svg-min.js"></script>
 	<h1 text align = "center">Eastern Dishes</h1>
 			<section id="grid" class="grid clearfix">
 				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
 					<figure>
-						<img src="img/9.jpg" />
+						<img src="<?php echo base_url('assets/Recipe/img/9.jpg'); ?>" />
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
 						<figcaption>
 							<h2>Sesame Chicken</h2>
@@ -26,7 +26,7 @@
 				</a>
 				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
 					<figure>
-						<img src="img/10.jpg" />
+						<img src="<?php echo base_url('assets/Recipe/img/10.jpg'); ?>" />
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
 						<figcaption>
 							<h2>Chicken Katsu</h2>
@@ -36,7 +36,7 @@
 				</a>
 				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
 					<figure>
-						<img src="img/11.jpg" />
+						<img src="<?php echo base_url('assets/Recipe/img/11.jpg'); ?>" />
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
 						<figcaption>
 							<h2>Bulgogi</h2>
@@ -46,7 +46,7 @@
 				</a>
 				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
 					<figure>
-						<img src="img/12.jpg" />
+						<img src="<?php echo base_url('assets/Recipe/img/12.jpg'); ?>" />
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
 						<figcaption>
 							<h2>Chicken Adobo with Coconut Milk</h2>
@@ -56,7 +56,7 @@
 				</a>
 				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
 					<figure>
-						<img src="img/13.jpg" />
+						<img src="<?php echo base_url('assets/Recipe/img/13.jpg'); ?>" />
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
 						<figcaption>
 							<h2>Pork Satay</h2>
@@ -66,7 +66,7 @@
 				</a>
 				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
 					<figure>
-						<img src="img/14.jpg" />
+						<img src="<?php echo base_url('assets/Recipe/img/14.jpg'); ?>" />
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
 						<figcaption>
 							<h2>Peanut Pork</h2>
@@ -76,7 +76,7 @@
 				</a>
 				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
 					<figure>
-						<img src="img/15.jpg" />
+						<img src="<?php echo base_url('assets/Recipe/img/15.jpg'); ?>" />
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
 						<figcaption>
 							<h2>Punjabi Chicken Curry</h2>
@@ -86,7 +86,7 @@
 				</a>
 				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
 					<figure>
-						<img src="img/16.jpg" />
+						<img src="<?php echo base_url('assets/Recipe/img/16.jpg'); ?>" />
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
 						<figcaption>
 							<h2>Fresh Spring Rolls</h2>
