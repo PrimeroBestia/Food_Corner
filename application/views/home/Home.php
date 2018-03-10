@@ -10,7 +10,7 @@
                     <img src="assets/FoodC/img/logo.png" alt="">
                     <p>Choose a recipe of your own desire to learn from wide variety cusines originating from different regions of the world.</p>
                     <div class="primary-button">
-                        <a href="application/controllers/Login.php" >Learn More</a>
+                        <a href="AboutUsView" >Learn More</a>
                     </div>
                 </div>
             </div>

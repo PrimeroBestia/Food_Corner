@@ -36,6 +36,9 @@
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <h1>Log in</h1>
+                            <?php if($this->session->flashdata('wrong')): ?>
+                                <?php echo '<p>'.$this->session->flashdata('wrong').'</p>';?>
+                            <?php session_destroy();endif;?>
                             <?php echo validation_errors(); ?>
                             <?php echo form_open('login/logins');?>
                                 <p>
@@ -56,58 +59,8 @@
                             <?php echo form_close();?>
                                             <p class="change_link">
             									Don't have an account?
-            									         <a href="#toregister" class="to_register">Sign up</a>
+            									         <a href="SignupView">Sign up</a>
             								</p>
-                        </div>
-
-                        <div id="register" class="animate form">
-                            <?php echo validation_errors(); ?>
-                            <?php echo form_open('login/register');?>
-                                <h1> Sign up </h1>
-                                <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u">First Name</label>
-                                    <input id="usernamesignup" name="fname"  type="text" placeholder="John" />
-                                </p>
-                                <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u">Middle Name</label>
-                                    <input id="usernamesignup" name="mname"  type="text" placeholder="Beck" />
-                                </p>
-                                <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u">Last Name</label>
-                                    <input id="usernamesignup" name="lname"  type="text" placeholder="Doe" />
-                                </p>
-                                <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u">Username</label>
-                                    <input id="usernamesignup" name="username"  type="text" placeholder="Username" />
-                                </p>
-                                <p>
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Email</label>
-                                    <input id="emailsignup" name="email"  type="email" placeholder="john@mail.com"/>
-                                </p>
-                                <p>
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Password </label>
-                                    <input id="passwordsignup" name="password"  type="password" placeholder="*********"/>
-                                </p>
-                                <p>
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="cpassword"  type="password" placeholder="*********"/>
-                                </p>
-                                <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u">Phone</label>
-                                    <input id="usernamesignup" name="phone"  type="text" placeholder="0999-999-9999" />
-                                </p>
-                                <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u">Address</label>
-                                    <input id="usernamesignup" name="caddress"  type="text" placeholder="123 Layo St. Daan District, Manila, Philippines" />
-                                </p>
-                                <p class="signin button">
-									                         <input type="submit" value="Sign up"/>
-								                                 </p>
-                                                      <?php echo form_close();?>
-                                                      <p class="change_link">
-                      									              Already a member?
-                      									              <a href="#tologin" class="to_register"> Log in </a>
-                      								                </p>
                         </div>
 
                     </div>
