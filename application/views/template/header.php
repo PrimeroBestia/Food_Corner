@@ -48,5 +48,5 @@
 <body>
     <div>
     <?php if(isset($_SESSION['alert'])): ?>
-        <?php echo '<p class = "alert alert-success">'.$_SESSION['alert'].'</p>';$_SESSION['alert']="";?>
-    <?php session_destroy();endif;?>
+        <?php echo '<p class = "alert alert-success">'.$_SESSION['alert'].'</p>';$_SESSION['alert']=NULL;?>
+    <?php endif;?>

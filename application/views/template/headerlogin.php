@@ -14,6 +14,11 @@
         <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/hero-slider.css'); ?>">
         <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/owl-carousel.css'); ?>">
         <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/templatemo-style.css'); ?>">
+        <link rel="shortcut icon" href="../favicon.ico">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Recipe/css/normalize.css'); ?>" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Recipe/css/demo2.css'); ?>" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Recipe/css/component.css'); ?>" />
+        <script src="<?php echo base_url('js/snap.svg-min.js'); ?>"></script>
 
         <link href="https://fonts.googleapis.com/css?family=Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
@@ -41,11 +46,9 @@
                 </div>
             </nav>
         </div>
-    </div>
-    <div>
     </head>
-
 <body>
-    <?php if($this->session->flashdata('user_registered')): ?>
-        <?php echo '<p class = "alert alert-success">'.$this->session->flashdata('user_registered').'</p>';?>
-    <?php session_destroy();endif;?>
+    <div>
+    <?php if(isset($_SESSION['alert'])): ?>
+        <?php echo '<p class = "alert alert-success">'.$_SESSION['alert'].'</p>';$_SESSION['alert']=NULL;?>
+    <?php endif;?>

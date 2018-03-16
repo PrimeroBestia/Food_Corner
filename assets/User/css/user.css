@@ -1,22 +1,4 @@
-*
-{
-	margin:0;
-	padding:0;
-}
-body
-{	
-	font-family: tahoma;
-}
-header
-{
-	background-color: #98FB98;
-	height: 10vh;
-}
-h3, h5
-{
-	color:white;
-	position: center;
-}
+
 .logo img
 {
 	height: 50px;	
@@ -52,7 +34,7 @@ h3, h5
 {
 	color: #a2cf8d;
 }
-.nav-content
+.nav-contents
 {
 	position: absolute;
 	overflow: hidden;
@@ -60,12 +42,12 @@ h3, h5
 	max-width: 300px;
 	max-height: 0;
 }
-.nav-content a
+.nav-contents a
 {
 	color: #fff;
 	text-decoration: none;
 }
-.nav-content a:hover
+.nav-contents a:hover
 {
 	color: #a2cf8d;
 }
@@ -77,7 +59,7 @@ h3, h5
 {
 	list-style-type: none;
 }
-.nav-content .nav-sub ul li a
+.nav-contents .nav-sub ul li a
 {
 	display: inline-block;
 }
@@ -85,7 +67,7 @@ h3, h5
 {
 	background-color: #98FB98;
 }
-.nav-item:focus ~ .nav-content
+.nav-item:focus ~ .nav-contents
 {
 	max-height: 300px;
 	max-width: 300px;
@@ -152,7 +134,7 @@ h3, h5
 
 
 
-.content
+.contents
 {
 	background-color: white;
 	float: right;
@@ -163,17 +145,17 @@ h3, h5
 	width: 830px; 
 	box-shadow: 2px 2px 5px #ccc;
 }
-.content h4
+.contents h4
 {
 	margin-top: 10px;
 	margin-left: 10px;
 }
-.content h2
+.contents h2
 {
 	padding: 15px;
 	border-bottom: 1px solid grey;
 }
-.content p
+.contents p
 {
 	margin-top: 5px;
 	margin-left: 10px;
@@ -182,7 +164,15 @@ h3, h5
 	height: 30px;
 	border-bottom: 1px solid grey;
 }
-
+.profiles
+{
+	background-color: white;
+	float: right;
+	margin-right: 150px;
+	margin-top: 20px;
+	margin-left: 10px;
+	box-shadow: 2px 2px 5px #ccc;
+}
 
 
 .table-align
@@ -223,7 +213,7 @@ h3, h5
 
 
 
-.edit-profile
+.edit-profiles
 {
 	left: 25%;
 	position: relative;
@@ -231,7 +221,7 @@ h3, h5
 	transform: translateY(-50%);
 	width: 400px;
 }
-.edit-profile label
+.edit-profiles label
 {
 	padding: 10px;
 }
@@ -396,12 +386,12 @@ input:focus
 .popup .close:hover {
   color: #06D85F;
 }
-.popup .content
+.popup .contents
 {
 	max-height: 30%;
 	overflow: auto;
 }
-.popup .content input
+.popup .contents input
 {
 	margin-bottom: 15px;
 	padding: 10px;
@@ -424,7 +414,7 @@ input:focus
 
 
 
-.up-content
+.up-contents
 {
 	background-color: white;
 	float: right;
@@ -491,7 +481,7 @@ input:focus
 	color: #a2cf8d;
 	border-bottom: 4px solid #a2cf8d;
 }
-.down-content
+.down-contents
 {
 	background-color: white;
 	float: right;
@@ -596,65 +586,6 @@ MYCART
 		
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-footer {
-	background-color: #98FB98;
-	line-height: 50px;
-	text-align: center;
-}
-
-footer p 
-{	
-	color: #473C8B;
-	
-}
-
-footer p em {
-	font-style: normal;
-	color: #f2745f;
-	font-weight: 500;
-}
-
-footer ul {
-	list-style: none;
-	padding: 0;
-}
-
-footer ul li {
-	display: inline-block;	
-}
-
-footer ul li i {
-	width: 36px;
-	height: 36px;
-	display: inline-block;
-	text-align: center;
-	line-height: 36px!important;
-	background-color: #fff;
-	border-radius: 50%;
-	color: #363e50;
-	transition: all 0.5s;
-}
-
-footer ul li i:hover {
-	background-color: #f2745f;	
-}
 
 
 
