@@ -47,6 +47,6 @@
     </head>
 <body>
     <div>
-    <?php if($this->session->flashdata('user_registered')): ?>
-        <?php echo '<p class = "alert alert-success">'.$this->session->flashdata('user_registered').'</p>';?>
+    <?php if(isset($_SESSION['alert'])): ?>
+        <?php echo '<p class = "alert alert-success">'.$_SESSION['alert'].'</p>';$_SESSION['alert']="";?>
     <?php session_destroy();endif;?>

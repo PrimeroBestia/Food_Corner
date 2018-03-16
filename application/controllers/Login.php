@@ -19,7 +19,7 @@ class Login extends CI_Controller {
 			if($this->customer_model->check_account($password,$username)){
 			session_start();
 			$_SESSION['username'] = $this->input->post('username');
-			$this->session->set_flashdata('user_registered','You have Successfully logged in.');
+			$_SESSION['alert'] = "You have Successfully been Logged In.";
 			redirect('Welcome');
 			}
 			else{
@@ -44,7 +44,7 @@ class Login extends CI_Controller {
 			$enc_pass = $this->input->post('password');
 			$this->customer_model->register($enc_pass);
 			$this->customer_model->address_insert($this->input->post('username'));
-			$this->session->set_flashdata('user_registered','Successfully Registered! and you can now log in');
+			$_SESSION['alert'] = "Successfully Registered! and you can now log in";
 			redirect('Welcome');
 		}
 	}
