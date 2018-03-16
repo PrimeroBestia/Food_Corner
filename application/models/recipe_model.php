@@ -45,9 +45,22 @@ class recipe_model extends CI_Model {
 		return $result->result_array();
     }
 
+    public function get_east(){
+    	$this->db->where('r_region',"east");
+		$result = $this->db->get('recipe');
+		return $result->result_array();
+    }
     public function get_recipe($id){
     	$this->db->where('r_id',$id);
 		$result = $this->db->get('recipe');
 		return $result->row_array();
+    }
+    public function get_ingridients($ingid){
+    	$this->db->select('*');
+    	$this->db->where('ingridients_list.ing_list_id',$ingid);    
+		$this->db->from('ingridients_list');
+		$this->db->join('ingredients', 'ingredients.ing_id = ingridients_list.ing_id');
+    	$result = $this->db->get();
+		return $result->result_array();
     }
 }
