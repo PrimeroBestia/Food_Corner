@@ -14,17 +14,19 @@
 		<script src="js/snap.svg-min.js"></script>
 	<h1 text align = "center">Western Dishes</h1>
 			<section id="grid" class="grid clearfix">
-				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
+				<?php foreach($recipes as $recipe):?>
+				<a href="<?php echo site_url('recipe/'.$recipe['r_id']);?>" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
 					<figure>
-						<img src="<?php echo base_url('assets/Recipe/img/1.jpg'); ?>" />
+						<img src="<?php echo $recipe['r_photo'] ?>" />
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
 						<figcaption>
-							<h2>Cheesy Ranch Tuna</h2>
+							<h2><?php echo $recipe['r_name'];?></h2>
 							<button>View Recipe</button>
 						</figcaption>
 					</figure>
 				</a>
-				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
+				<?php endforeach; ?>
+				<!-- <a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
 					<figure>
 						<img src="<?php echo base_url('assets/Recipe/img/2.jpg'); ?>" />
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
@@ -94,7 +96,7 @@
 						</figcaption>
 					</figure>
 				</a>
-			</section>
+			</section> -->
 			
 		</div><!-- /container -->
 		<script>
