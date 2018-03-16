@@ -30,7 +30,7 @@
                 </div>
                 <div id="main-nav" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="Welcome">Home</a></li>
+                        <li><a href="<?php echo base_url();?>">Home</a></li>
                         <li><a href="">Order Now</a></li>
                         <li><a href="RecipeBook">Recipe Book</a></li>
                         <li><a href="AboutUsView">About Us</a></li>
