@@ -26,77 +26,8 @@
 					</figure>
 				</a>
 				<?php endforeach; ?>
-				<!-- <a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
-					<figure>
-						<img src="<?php echo base_url('assets/Recipe/img/2.jpg'); ?>" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
-						<figcaption>
-							<h2>Easy Chicken Marinara</h2>
-							<button>View Recipe</button>
-						</figcaption>
-					</figure>
-				</a>
-				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
-					<figure>
-						<img src="<?php echo base_url('assets/Recipe/img/3.jpg'); ?>" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
-						<figcaption>
-							<h2>Lasagne</h2>
-							<button>View Recipe</button>
-						</figcaption>
-					</figure>
-				</a>
-				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
-					<figure>
-						<img src="<?php echo base_url('assets/Recipe/img/4.jpg'); ?>" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
-						<figcaption>
-							<h2>Salmon Burger</h2>
-							<button>View Recipe</button>
-						</figcaption>
-					</figure>
-				</a>
-				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
-					<figure>
-						<img src="<?php echo base_url('assets/Recipe/img/5.jpg'); ?>" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
-						<figcaption>
-							<h2>Spicy Sausage and Spaghetti</h2>
-							<button>View Recipe</button>
-						</figcaption>
-					</figure>
-				</a>
-				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
-					<figure>
-						<img src="<?php echo base_url('assets/Recipe/img/6.jpg'); ?>" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
-						<figcaption>
-							<h2>Sloppy Joes</h2>
-							<button>View Recipe</button>
-						</figcaption>
-					</figure>
-				</a>
-				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
-					<figure>
-						<img src="<?php echo base_url('assets/Recipe/img/7.jpg'); ?>" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
-						<figcaption>
-							<h2>Turkey Pot Pie</h2>
-							<button>View Recipe</button>
-						</figcaption>
-					</figure>
-				</a>
-				<a href="#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
-					<figure>
-						<img src="<?php echo base_url('assets/Recipe/img/8.jpg'); ?>" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
-						<figcaption>
-							<h2>Chicken Curry</h2>
-							<button>View Recipe</button>
-						</figcaption>
-					</figure>
-				</a>
-			</section> -->
+				
+			</section>
 			
 		</div><!-- /container -->
 		<script>
