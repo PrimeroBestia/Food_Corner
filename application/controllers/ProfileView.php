@@ -7,7 +7,14 @@ class ProfileView extends CI_Controller {
 		$this->load->helper('url');
 	}
 	public function index()
-	{
-		$this->load->view('profile/profile');
+	{	
+		if(isset($_SESSION['username'])){
+			$this->load->view('template/headerlogin');
+			$this->load->view('profile/profile');
+			$this->load->view('template/footer');
+		}
+		else{
+			redirect(base_url());
+		}
 	}
 }
