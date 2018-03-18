@@ -15,10 +15,10 @@
 				<img src="assets/User/img/logo.png">
 			</div>
 			<ul class="nav-main">
-				<li><a href="">HOME</a></li>
+				<li><a href="<?php echo base_url();?>">HOME</a></li>
 				<li><a href="">ORDER NOW</a></li>
-				<li><a href="">RECIPE BOOK</a></li>
-				<li><a href="">ABOUT US</a></li>
+				<li><a href="<?php echo site_url('/RecipeBook/index');?>">RECIPE BOOK</a></li>
+				<li><a href="<?php echo site_url('/AboutUsView/index')?>">ABOUT US</a></li>
 				<li><a href="" class="nav-item">USER</a>
 					<div class="nav-content">
 						<div class="nav-sub">
