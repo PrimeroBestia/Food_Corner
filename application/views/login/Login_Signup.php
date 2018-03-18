@@ -59,7 +59,7 @@
                             <?php echo form_close();?>
                                             <p class="change_link">
             									Don't have an account?
-            									         <a href="SignupView">Sign up</a>
+            									         <a href="<?php echo site_url('/SignupView/index');?>">Sign up</a>
             								</p>
                         </div>
 
