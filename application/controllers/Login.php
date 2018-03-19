@@ -23,7 +23,7 @@ class Login extends CI_Controller {
 			redirect('Welcome');
 			}
 			else{
-				$this->session->set_flashdata('wrong','Username or Password is wrong');
+				$this->session->set_flashdata('wrong','You have entered incorrect Username or Password');
 				$this->load->view('login/Login_Signup');
 			}
 		}
