@@ -40,7 +40,7 @@
                         <li><a href="<?php echo site_url('/RecipeBook/index');?>">Recipe Book</a></li>
                         <li><a href="<?php echo site_url('/AboutUsView/index');?>">About Us</a></li>
                         <li><a href="">MyCart</a></li>
-                        <li><a href="<?php echo site_url('/ProfileView/index');?>"><?php echo $_SESSION['username'];?></a></li>
+                        <li><a href="<?php echo site_url('/ProfileView/index');?>">My Profile</a></li>
                         <li><a href="<?php echo site_url('/LogOut/index');?>">Log Out</a></li>
                     </ul>
                 </div>

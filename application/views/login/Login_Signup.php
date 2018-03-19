@@ -42,8 +42,8 @@
                             <?php echo validation_errors(); ?>
                             <?php echo form_open('login/logins');?>
                                 <p>
-                                    <label for="username" class="uname" data-icon="u" >Username </label>
-                                    <input id="username" name="username" type="text" required placeholder="Username"/>
+                                    <label for="email" class="mail" data-icon="u" >E-mail </label>
+                                    <input id="email" name="email" type="email" required placeholder="john@mail.com"/>
                                 </p>
                                 <p>
                                     <label for="password" class="youpasswd" data-icon="p"> Password </label>
