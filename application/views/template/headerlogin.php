@@ -37,11 +37,11 @@
                     <ul class="nav navbar-nav">
                         <li><a href="<?php echo base_url();?>">Home</a></li>
                         <li><a href="">Order Now</a></li>
-                        <li><a href="RecipeBook">Recipe Book</a></li>
-                        <li><a href="AboutUsView">About Us</a></li>
+                        <li><a href="<?php echo site_url('/RecipeBook/index');?>">Recipe Book</a></li>
+                        <li><a href="<?php echo site_url('/AboutUsView/index');?>">About Us</a></li>
                         <li><a href="">MyCart</a></li>
-                        <li><a href="ProfileView"><?php echo $_SESSION['username'];?></a></li>
-                        <li><a href="LogOut">Log Out</a></li>
+                        <li><a href="<?php echo site_url('/ProfileView/index');?>"><?php echo $_SESSION['username'];?></a></li>
+                        <li><a href="<?php echo site_url('/LogOut/index');?>">Log Out</a></li>
                     </ul>
                 </div>
             </nav>

@@ -23,7 +23,7 @@ class address_model extends CI_Model {
 		return $result;
 	}
 	
-	public function upadte_suppliers($id,$add){
+	public function update_suppliers($id,$add){
 
 		$this->db->where('address_ID', $id);
 		$this->db->update('address', $add);

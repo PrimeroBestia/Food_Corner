@@ -36,10 +36,10 @@
                     <div id="main-nav" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li><a href="<?php echo base_url();?>">Home</a></li>
-                            <li><a href="RecipeBook">Recipe Book</a></li>
-                            <li><a href="AboutUsView">About Us</a></li>
-                            <li><a href="LoginView">Log In</a></li>
-                            <li><a href="SignupView">Sign Up</a></li>
+                            <li><a href="<?php echo site_url('/RecipeBook/index');?>">Recipe Book</a></li>
+                            <li><a href="<?php echo site_url('/AboutUsView/index');?>">About Us</a></li>
+                            <li><a href="<?php echo site_url('/LoginView/index');?>">Log In</a></li>
+                            <li><a href="<?php echo site_url('/SignupView/index');?>">Sign Up</a></li>
                         </ul>
                     </div>
                 </nav>

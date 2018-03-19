@@ -13,7 +13,7 @@
                     <div class="mask">
                         <h2>Western Dishes</h2>
                         <p>Find the best, easy fast meal ideas from Western food recipes. </p>
-                        <a href="WestView" class="info">View Dishes</a>
+                        <a href="<?php echo site_url('/WestView/index');?>" class="info">View Dishes</a>
                     </div>
                 </div>
                 <div class="view view-fifth">
@@ -21,7 +21,7 @@
                     <div class="mask">
                         <h2>Eastern Dishes</h2>
                         <p>Find the best, easy fast meal ideas from Eastern food recipes. </p>
-                        <a href="EastView" class="info">View Dishes</a>
+                        <a href="<?php echo site_url('/EastView/index');?>" class="info">View Dishes</a>
                     </div>
                 </div>
             </div>
