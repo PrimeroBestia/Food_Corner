@@ -23,7 +23,7 @@ class Login extends CI_Controller {
 			redirect('Welcome');
 			}
 			else{
-				$this->session->set_flashdata('wrong','You have entered an invalid Email or Password');
+				$this->session->set_flashdata('wrong','You have entered an invalid Username/Email or Password');
 				$this->load->view('login/Login_Signup');
 			}
 		}
