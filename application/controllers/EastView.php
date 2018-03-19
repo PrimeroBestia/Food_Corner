@@ -9,7 +9,7 @@ class EastView extends CI_Controller {
 	public function index()
 	{
 		$data['recipes'] = $this->recipe_model->get_east();
-		if (!isset($_SESSION['username'])) {
+		if (!isset($_SESSION['email'])) {
 			$this->load->view('template/header');
 			$this->load->view('Recipe2/Eastern',$data);
 			$this->load->view('template/footer');
