@@ -68,7 +68,7 @@
                                                       <?php echo form_close();?>
                                                       <p class="change_link">
                       									              Already a member?
-                      									              <a href="<?php echo site_url('/LoginView');?>" class="to_register"> Log in </a>
+                      									              <a href="<?php echo site_url('/LoginView/index');?>" class="to_register"> Log in </a>
                       								                </p>
                         </div>
 

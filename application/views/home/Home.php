@@ -36,7 +36,7 @@
                         </div>
                         <span>or</span>
                         <div class="primary-white-button">
-                            <a href="#" class="scroll-link" data-id="book-table">Order Now</a>
+                            <a href="<?php echo site_url ('/RecipeBook/index');?>" class="scroll-link" data-id="book-table">Order Now</a>
                         </div>
                     </div>
                 </div>
