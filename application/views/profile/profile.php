@@ -21,6 +21,8 @@
 				<h4>My Profile</h4>
 				<p>Manage and Protect your account</p>
 				<div class="edit-profiles">
+					<label>Username</label>
+					<input type="text" placeholder="username">
                 	<label>First Name</label>
                    	<input type="text" placeholder="first name">
                    	<label>Middle Name</label>

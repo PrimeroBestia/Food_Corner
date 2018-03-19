@@ -8,7 +8,7 @@ class ProfileView extends CI_Controller {
 	}
 	public function index()
 	{	
-		if(isset($_SESSION['username'])){
+		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
 			$this->load->view('profile/profile');
 			$this->load->view('template/footer');
