@@ -10,6 +10,8 @@ class LoginView extends CI_Controller {
 	{
 		session_destroy();
 		session_start();
-		$this->load->view('login/Login_Signup');
+			$this->load->view('template/header');
+			$this->load->view('login/Login_Signup');
+			$this->load->view('template/footer');
 	}
 }

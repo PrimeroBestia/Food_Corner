@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-    <head>
-    <meta charset="UTF-8" />
-    <title>Food Corner</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Log In" />
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/style2.css'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/style.css'); ?>" />
+
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/style2.css'); ?>" />
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/style.css'); ?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/style1.css'); ?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/animate-custom.css'); ?>" />
-		<script type="text/javascript" src="assets/Login/js/modernizr.custom.86080.js"></script>
-    </head>
 
         <div class="container">
-                <div class="clr"></div>
-    <body>
-        <div class="container">
-	
-            <section>
                 <div id="container_demo" >
-                    <a class="hiddenanchor" id="toregister"></a>
-                    <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <?php echo validation_errors(); ?>
@@ -63,8 +47,11 @@
                         </div>
                     </div>
                 </div>
-            </section>
         </div>
-    </body>
-    <br />
-</html>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
