@@ -14,9 +14,9 @@ class Login extends CI_Controller {
 		if($this->form_validation->run()===FALSE){
 			$this->load->view('login/Login_Signup');
 		}else{
-			$username = $this->input->post('email');
+			$email = $this->input->post('email');
 			$password = $this->input->post('password');
-			if($this->customer_model->check_account($password,$username)){
+			if($this->customer_model->check_account($password,$email)){
 			session_start();
 			$_SESSION['email'] = $this->input->post('email');
 			$_SESSION['alert'] = "You have Successfully been Logged In.";
@@ -31,7 +31,6 @@ class Login extends CI_Controller {
 	public function register(){
 		$data['title'] = 'Sign up';
 		$this->form_validation->set_rules('email','Emal','required|callback_check_email');
-		$this->form_validation->set_rules('username','username','required|callback_check_username');
 		$this->form_validation->set_rules('password','Password','required');
 		$this->form_validation->set_rules('cpassword','Confirm Password','matches[password]');
 		$this->form_validation->set_rules('phone','Phone','required');
@@ -43,18 +42,9 @@ class Login extends CI_Controller {
 			session_start();
 			$enc_pass = $this->input->post('password');
 			$this->customer_model->register($enc_pass);
-			$this->customer_model->address_insert($this->input->post('username'));
+			$this->customer_model->address_insert($this->input->post('email'));
 			$_SESSION['alert'] = "Successfully Registered! and you can now log in";
 			redirect('Welcome');
-		}
-	}
-	function check_username($username){
-		$this->form_validation->set_message('check_username','That username exists. Please choose a different one');
-		if($this->customer_model->check_username_exists($username)){
-			return true;
-		}else{
-			//Encryption
-			return false;
 		}
 	}
 	function check_email($email){
