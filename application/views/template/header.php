@@ -17,7 +17,7 @@
         <div class="header">
             <nav class="navbar navbar-inverse" role="navigation">
                 <div id="logo-nav">
-                    <img src="assets/FoodC/img/logo-nav.png" alt="">
+                    <img src="<?php echo base_url();?>assets/FoodC/img/logo-nav.png" alt="Logo">
                 </div>
                 <div class="navbar-header">
                     <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
@@ -33,7 +33,6 @@
                         <li><a href="<?php echo base_url();?>">Home</a></li>
                         <li><a href="<?php echo site_url('/RecipeBook/index');?>">Recipe Book</a></li>
                         <li><a href="<?php echo site_url('/AboutUsView/index');?>">About Us</a></li>
-                        <li><a href="">MyCart</a></li>
                         <li><a href="<?php echo site_url('/LoginView/index')?>" >Log in</a></li>
                         <li><a href="<?php echo site_url('/SignupView/index')?>" >Sign up</a></li>
                     </ul>

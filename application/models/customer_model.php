@@ -57,12 +57,17 @@ class customer_model extends CI_Model {
 			'c_mname' =>$this->input->post('mname'),
 			'c_lname' =>$this->input->post('lname'),
 			'c_email' =>$this->input->post('email'),
-			'c_id' =>$this->input->post('username'),
 			'c_pass' =>$enc_pass,
 			'c_pno' =>$this->input->post('phone'),
 			'acc_type' =>$user
 		);
-		return$this->db->insert('customer',$data);
+		$this->db->insert('customer',$data);
+		$query=$this->db->get_where('customer',array('c_email' =>$this->input->post('email')));
+		$data = array(
+			'c_address_id' => $query->row_array(0)['c_id']
+		);
+		$this->db->where('c_id',$query->row_array(0)['c_id']);
+		$this->db->update('customer',$data);
 	}
 	public function check_username_exists($username){
 		$query=$this->db->get_where('customer',array('c_id'=>$username));
@@ -83,17 +88,13 @@ class customer_model extends CI_Model {
 		}
 	}
 	public function address_insert($username){
-		$query=$this->db->get_where('customer',array('c_id'=>$username));
-		$address;
-		$addressid =1;
-		foreach ($query->result_array() as $key) {
-			$address = $key['c_address_id'];
-		}
+		$query=$this->db->get_where('customer',array('c_email'=>$username));
+		$address=$query->row_array(0)['c_id'];
 		$data = array(
 			'caddress_id' =>$address,
-			'c_id' =>$this->input->post('username'),
+			'c_id' =>$address,
 			'address' =>$this->input->post('caddress'),
-			'address_id' =>$addressid
+			'address_id' =>1
 		);
 		return $this->db->insert('customer_address',$data);
 	}
