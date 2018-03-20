@@ -1,28 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-    <head>
-    <meta charset="UTF-8" />
+
     <title>Food Corner</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Log In" />
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/style2.css'); ?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/style.css'); ?>" />
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/style1.css'); ?>" />
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/animate-custom.css'); ?>" />
-	<script type="text/javascript" src="assets/Login/js/modernizr.custom.86080.js"></script>
-    </head>
-
-	 <ul class="cb-slideshow">
-        <li><span>Image 01</span></li>
-        <li><span>Image 02</span></li>
-        <li><span>Image 03</span></li>
-        <li><span>Image 04</span></li>
-        <li><span>Image 05</span></li>
-        <li><span>Image 06</span></li>
-    </ul>
-    <div class="clr"></div>
-    <body>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/style1.css'); ?>" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Login/css/animate-custom.css'); ?>" />
+		<script type="text/javascript" src="assets/Login/js/modernizr.custom.86080.js"></script>
+    
         <div class="container">
             <section>
                 <div id="container_demo" >
