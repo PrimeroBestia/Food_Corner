@@ -24,14 +24,10 @@ class customer_model extends CI_Model {
 				return NULL;
 			}
 	}
-	public function get_username($username){
-		$query=$this->db->query("SELECT c_id FROM customer where c_id = ".$username);
-		if($query->num_row()>0){
-			return $query->result();
-		}
-		else{
-			return NULL;
-		}
+	public function get_cid($username){
+		$this->db->where('c_email',$username);
+		$query = $this->db->get('customer');
+		return $query->row_array(0)['c_id'];
 	}
 	public function update_username($username){
 		$query=$this->db->query("UPDATE c_id FROM customer where c_id = ".$username);
