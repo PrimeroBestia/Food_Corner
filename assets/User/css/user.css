@@ -603,51 +603,6 @@ MYCART
 
 
 
-footer {
-	background-color: #98FB98;
-	line-height: 50px;
-	text-align: center;
-}
-
-footer p 
-{	
-	color: #473C8B;
-	
-}
-
-footer p em {
-	font-style: normal;
-	color: #f2745f;
-	font-weight: 500;
-}
-
-footer ul {
-	list-style: none;
-	padding: 0;
-}
-
-footer ul li {
-	display: inline-block;	
-}
-
-footer ul li i {
-	width: 36px;
-	height: 36px;
-	display: inline-block;
-	text-align: center;
-	line-height: 36px!important;
-	background-color: #fff;
-	border-radius: 50%;
-	color: #363e50;
-	transition: all 0.5s;
-}
-
-footer ul li i:hover {
-	background-color: #f2745f;	
-}
-
-
-
 
 
 
