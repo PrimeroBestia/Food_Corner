@@ -9,11 +9,12 @@
 
 </head>
 <body>
-	
+
 	<div class="banner">
 			<div class="side">
 				<h3 class="displayname">User's Name</h3>
 				<ul class="sidemenu">
+
 					<li><a href="<?php echo site_url('/ProfileView/myaccount');?>">My Account</a>
 							<ul>
 								<li><a href="<?php echo site_url('/ProfileView/profile');?>">Profile </a></li>
@@ -35,6 +36,7 @@
 						<li><a href="<?php echo site_url('/ProfileView/mp_torecieved');?>">TO RECEIVED</a></li>
 						<li><a href="<?php echo site_url('/ProfileView/mp_completed');?>">COMPLETED</a></li>
 						<li><a href="<?php echo site_url('/ProfileView/mp_cancelled');?>" class="cancelled">CANCELLED</a></li>
+
 					</ul>
 				</div>
 

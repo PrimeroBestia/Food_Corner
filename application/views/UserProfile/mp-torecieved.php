@@ -9,7 +9,6 @@
 
 </head>
 <body>
-
 	<div class="banner">
 			<div class="side">
 				<h3 class="displayname">User's Name</h3>

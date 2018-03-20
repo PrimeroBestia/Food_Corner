@@ -65,7 +65,9 @@ class ProfileView extends CI_Controller {
 	{
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
+
 			$this->load->view('UserProfile/mp-cancelled');
+
 			$this->load->view('template/footer');
 		}
 		else{

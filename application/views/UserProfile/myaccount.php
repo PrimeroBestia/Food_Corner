@@ -9,7 +9,6 @@
 
 </head>
 <body>
-	
 	<div class="banner">
 			<div class="side">
 				<h3 class="displayname">User's Name</h3>
@@ -26,7 +25,6 @@
 					<li><a href="<?php echo site_url('/ProfileView/mycart');?>">My Cart</a></li>
 				</ul>
 			</div>
-
 			<div class="content">
 				<h2>Personal Information</h2>
 					<div class="table-align">

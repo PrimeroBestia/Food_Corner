@@ -9,7 +9,6 @@
 
 </head>
 <body>
-
 	<div class="banner">
 
 	<div class="banner">
@@ -28,7 +27,6 @@
           <li><a href="<?php echo site_url('/ProfileView/mycart');?>">My Cart</a></li>
         </ul>
       </div>
-
 			<div class="up-content">
 				<div class="tabs">
 					<ul>
@@ -48,7 +46,7 @@
 					</div>
 				</div>
 			</div>
-
+        
 			</div>
 		</div>
 
