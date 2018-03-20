@@ -5,16 +5,16 @@
 	<div class="banner">
 			<div class="side">
 				<ul class="sidemenu">
-					<li><a href="">My Account</a>
+					<li><a href="<?php echo site_url('/ProfileView/index');?>">My Account</a>
 							<ul>
-								<li><a href="">Profile </a></li>
-								<li><a href="">Bank Cards</a></li>
-								<li><a href="">Addresses</a></li>
-								<li><a href="">Change Password</a></li>
+							
+								<li><a href="<?php echo site_url('ProfileView/bankcards');?>">Bank Cards</a></li>
+								<li><a href="<?php echo site_url('ProfileView/addresses');?>">Addresses</a></li>
+								<li><a href="<?php echo site_url('ProfileView/changepw');?>">Change Password</a></li>
 							</ul>
 					</li>
-					<li><a href="">My Purchase</a></li>
-					<li><a href="">My Cart</a></li>
+					<li><a href="<?php echo site_url('ProfileView/mypurchase');?>">My Purchase</a></li>
+					<li><a href="<?php echo site_url('ProfileView/cart');?>">My Cart</a></li>
 				</ul>
 			</div>
 			<div class="contents">
