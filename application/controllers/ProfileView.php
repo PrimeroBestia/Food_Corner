@@ -65,7 +65,9 @@ class ProfileView extends CI_Controller {
 	{
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/mp_cancelled');
+
+			$this->load->view('UserProfile/mp-cancelled');
+
 			$this->load->view('template/footer');
 		}
 		else{
@@ -76,7 +78,7 @@ class ProfileView extends CI_Controller {
 	{
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/mp_completed');
+			$this->load->view('UserProfile/mp-completed');
 			$this->load->view('template/footer');
 		}
 		else{
@@ -87,7 +89,7 @@ class ProfileView extends CI_Controller {
 	{
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/mp_topay');
+			$this->load->view('UserProfile/mp-topay');
 			$this->load->view('template/footer');
 		}
 		else{
@@ -98,7 +100,7 @@ class ProfileView extends CI_Controller {
 	{
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/mp_torecieved');
+			$this->load->view('UserProfile/mp-torecieved');
 			$this->load->view('template/footer');
 		}
 		else{
@@ -109,7 +111,7 @@ class ProfileView extends CI_Controller {
 	{
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/mp_toship');
+			$this->load->view('UserProfile/mp-toship');
 			$this->load->view('template/footer');
 		}
 		else{

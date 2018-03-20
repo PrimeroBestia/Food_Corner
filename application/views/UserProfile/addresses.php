@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>FOOD CORNER</title>
-	<link rel="stylesheet" type="text/css" href="css/user.css">
+	 <link rel="stylesheet" type="text/css" href="css/user.css">
 	 <link href="https://fonts.googleapis.com/css?family=Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -26,7 +26,6 @@
 					<li><a href="<?php echo site_url('/ProfileView/mycart');?>">My Cart</a></li>
 				</ul>
 			</div>
-
 
 			<div class="content">
 				<h2>My Addresses</h2>

@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading">
-                        <h2>Signup for our newsletters</h2>
+                        <h2>Signup For Our Newsletters</h2>
                     </div>
                 </div>
             </div>
