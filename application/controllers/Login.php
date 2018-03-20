@@ -19,12 +19,15 @@ class Login extends CI_Controller {
 			if($this->customer_model->check_account($password,$email)){
 			session_start();
 			$_SESSION['email'] = $this->input->post('email');
+			$_SESSION['id'] = $this->customer_model->get_cid($_SESSION['email']);
 			$_SESSION['alert'] = "You have Successfully been Logged In.";
 			redirect('Welcome');
 			}
 			else{
 				$this->session->set_flashdata('wrong','You have entered an invalid Username/Email or Password');
+				$this->load->view('template/header');
 				$this->load->view('login/Login_Signup');
+				$this->load->view('template/footer');
 			}
 		}
 	}
@@ -36,7 +39,9 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('phone','Phone','required');
 		$this->form_validation->set_rules('caddress','Address','required');
 		if($this->form_validation->run()===FALSE){
-				$this->load->view('login/Signups');
+			$this->load->view('template/header');
+			$this->load->view('login/Signups');
+			$this->load->view('template/footer');
 		}else{
 			//Encryption
 			session_start();

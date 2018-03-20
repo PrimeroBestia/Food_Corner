@@ -39,6 +39,12 @@ class recipe_model extends CI_Model {
 		return $result;
     }
 
+    public function get_region($region){
+    	$this->db->where('r_region',$region);
+		$result = $this->db->get('recipe');
+		return $result->result_array();
+    }
+
     public function get_west(){
     	$this->db->where('r_region',"west");
 		$result = $this->db->get('recipe');

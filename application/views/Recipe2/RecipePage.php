@@ -23,7 +23,26 @@
 			</div>
 			<p class="recipesource">SOURCE : www.allrecipes.com</p>
 			<div class="addtocart">
-						<a href="" class="btn-addtocart">Add to Cart</a>
-						<p>want to try this recipe?</br> order ingredients now!</p>
+				<button type="button" class="btn-addtocart" data-toggle="modal" data-target="#myModal">Add to Cart</button>
+				<p>want to try this recipe?</br> order ingredients now!</p>
+			</div>
+			<div id="myModal" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Modal Header</h4>
+			      </div>
+			      <div class="modal-body">
+			        <p>Some text in the modal.</p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+
+			  </div>
 			</div>
 		</div>

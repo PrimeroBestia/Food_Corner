@@ -13,7 +13,8 @@ class RecipeGet extends CI_Controller {
 		$inglist = $recipe['ing_list_id'];
 		$ingridients = $this->recipe_model->get_ingridients($inglist);
 		$data['recipe'] = $recipe;
-		$data['ingridients'] =$ingridients;	
+		$data['ingridients'] =$ingridients;
+		if($this->recipe_model->get_recipe($r_id)){
 		if (isset($_SESSION['username'])) {
 			$this->load->view('template/headerlogin');
 			$this->load->view('Recipe2/RecipePage',$data);
@@ -23,6 +24,10 @@ class RecipeGet extends CI_Controller {
 			$this->load->view('template/header');
 			$this->load->view('Recipe2/RecipePage',$data);
 			$this->load->view('template/footer');
+		}
+		}
+		else{
+			redirect(base_url());
 		}	
 	}
 }
