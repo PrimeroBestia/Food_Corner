@@ -9,21 +9,21 @@ class Login extends CI_Controller {
 	}
 	public function logins(){
 		$data['title'] = 'Sign up';
-		$this->form_validation->set_rules('username','Username','required');
+		$this->form_validation->set_rules('email','Email','required');
 		$this->form_validation->set_rules('password','Password','required');
 		if($this->form_validation->run()===FALSE){
 			$this->load->view('login/Login_Signup');
 		}else{
-			$username = $this->input->post('username');
+			$username = $this->input->post('email');
 			$password = $this->input->post('password');
 			if($this->customer_model->check_account($password,$username)){
 			session_start();
-			$_SESSION['username'] = $this->input->post('username');
+			$_SESSION['email'] = $this->input->post('email');
 			$_SESSION['alert'] = "You have Successfully been Logged In.";
 			redirect('Welcome');
 			}
 			else{
-				$this->session->set_flashdata('wrong','Username or Password is wrong');
+				$this->session->set_flashdata('wrong','You have entered an invalid Username/Email or Password');
 				$this->load->view('login/Login_Signup');
 			}
 		}

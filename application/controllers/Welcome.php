@@ -7,7 +7,7 @@ class Welcome extends CI_Controller {
 		$this->load->helper('url');
 	}
 	public function index()
-	{	if (isset($_SESSION['username'])) {
+	{	if (isset($_SESSION['email'])) {
 			$this->load->view('template/headerlogin');
 			$this->load->view('home/Home');
 			$this->load->view('template/footer');

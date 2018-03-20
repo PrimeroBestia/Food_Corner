@@ -38,9 +38,10 @@
                             <?php echo validation_errors(); ?>
                             <?php echo form_open('login/register');?>
                                 <h1> Sign up </h1>
+                               <!--<p>
                                     <label for="usernamesignup" class="uname" data-icon="u">Username</label>
                                     <input id="usernamesignup" name="username"  type="text" placeholder="Username" />
-                                </p>
+                                </p>-->
                                 <p>
                                     <label for="emailsignup" class="youmail" data-icon="e" > Email</label>
                                     <input id="emailsignup" name="email"  type="email" placeholder="john@mail.com"/>
@@ -67,7 +68,7 @@
                                                       <?php echo form_close();?>
                                                       <p class="change_link">
                       									              Already a member?
-                      									              <a href="LoginView" class="to_register"> Log in </a>
+                      									              <a href="<?php echo site_url('/LoginView/index');?>" class="to_register"> Log in </a>
                       								                </p>
                         </div>
 

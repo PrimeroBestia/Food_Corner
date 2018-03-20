@@ -22,7 +22,7 @@ class AboutUsView extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{	if (!isset($_SESSION['username'])) {
+	{	if (!isset($_SESSION['email'])) {
 			$this->load->view('template/header');
 			$this->load->view('about/AboutUs');
 			$this->load->view('template/footer');

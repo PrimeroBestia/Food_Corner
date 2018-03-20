@@ -9,42 +9,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/bootstrap.min.css'); ?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/bootstrap-theme.min.css'); ?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/fontAwesome.css'); ?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/hero-slider.css'); ?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/owl-carousel.css'); ?>">
-        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/templatemo-style.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/carousel.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/fontAwesome.css') ?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/FoodC/css/templatemo-style.css') ?>">
         <link rel="shortcut icon" href="../favicon.ico">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Recipe/css/normalize.css'); ?>" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Recipe/css/demo2.css'); ?>" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Recipe/css/component.css'); ?>" />
-        <script src="<?php echo base_url('js/snap.svg-min.js'); ?>"></script>
-
-        <link href="https://fonts.googleapis.com/css?family=Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-
+        
         <div class="header">
-                <nav class="navbar navbar-inverse" role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div id="main-nav" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="<?php echo base_url();?>">Home</a></li>
-                            <li><a href="RecipeBook">Recipe Book</a></li>
-                            <li><a href="AboutUsView">About Us</a></li>
-                            <li><a href="LoginView">Log In</a></li>
-                            <li><a href="SignupView">Sign Up</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div id="logo-nav">
+                    <img src="assets/FoodC/img/logo-nav.png" alt="">
+                </div>
+                <div class="navbar-header">
+                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!--/.navbar-header-->
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="<?php echo base_url();?>">Home</a></li>
+                        <li><a href="<?php echo site_url('/RecipeBook/index');?>">Recipe Book</a></li>
+                        <li><a href="<?php echo site_url('/AboutUsView/index');?>">About Us</a></li>
+                        <li><a href="">MyCart</a></li>
+                        <li><a href="<?php echo site_url('/LoginView/index')?>" >Log in</a></li>
+                        <li><a href="<?php echo site_url('/SignupView/index')?>" >Sign up</a></li>
+                    </ul>
+                    
+                </div>
+                <!--/.navbar-collapse-->
+                
+            </nav>
+            <!--/.navbar-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.header-->
+
     </head>
+
 <body>
     <div>
     <?php if(isset($_SESSION['alert'])): ?>

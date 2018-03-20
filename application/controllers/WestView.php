@@ -9,7 +9,7 @@ class WestView extends CI_Controller {
 	public function index()
 	{
 		$data['recipes'] = $this->recipe_model->get_west();
-		if (!isset($_SESSION['username'])) {
+		if (!isset($_SESSION['email'])) {
 			$this->load->view('template/header');
 			$this->load->view('Recipe2/Western',$data);
 			$this->load->view('template/footer');

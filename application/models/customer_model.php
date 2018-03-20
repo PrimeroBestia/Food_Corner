@@ -106,8 +106,8 @@ class customer_model extends CI_Model {
 			return true;
 		}
 	}
-	public function check_account($password,$username){
-		$this->db->where('c_id',$username);
+	public function check_account($password,$email){
+		$this->db->where('c_email',$email);
 		$this->db->where('c_pass',$password);
 		$result = $this->db->get('customer');
 		if($result->num_rows() == 1){

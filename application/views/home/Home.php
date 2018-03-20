@@ -2,19 +2,27 @@
 
     
     
-    <section class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <h4>Fresh Ingredients Deliver Straight at your Doorstep</h4>
-                    <img src="assets/FoodC/img/logo.png" alt="">
-                    <p>Choose a recipe of your own desire to learn from wide variety cusines originating from different regions of the world.</p>
-                    <div class="primary-button">
-                        <a href="AboutUsView" >Learn More</a>
-                    </div>
+   <section class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="assets/FoodC/img/3.jpg" style="width:100%">
                 </div>
+
+                <div class="mySlides fade">
+                    <img src="assets/FoodC/img/4.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="assets/FoodC/img/5.jpg" style="width:100%">
+                </div>
+
+        <br>
+
+            <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
             </div>
-        </div>
+        
     </section>
 
 
@@ -36,7 +44,7 @@
                         </div>
                         <span>or</span>
                         <div class="primary-white-button">
-                            <a href="#" class="scroll-link" data-id="book-table">Order Now</a>
+                            <a href="<?php echo site_url('/RecipeBook/index');?>" class="scroll-link" data-id="book-table">Order Now</a>
                         </div>
                     </div>
                 </div>
@@ -54,35 +62,19 @@
     <section class="services">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-5 col-sm-10 col-xs-15">
                     <div class="service-item">
-                        <a href="menu.html">
-                        <img src="assets/FoodC/img/cook_breakfast.png" alt="Breakfast">
-                        <h4>Breakfast</h4>
+                        <a href="<?php echo site_url('/WestView/index');?>">
+                        <img src="assets/FoodC/img/western_map.jpg" alt="Western Dishes">
+                        <h4>Western Dishes</h4>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-5 col-sm-10 col-xs-1">
                     <div class="service-item">
-                        <a href="menu.html">
-                        <img src="assets/FoodC/img/cook_lunch.png" alt="Lunch">
-                        <h4>Lunch</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="menu.html">
-                        <img src="assets/FoodC/img/cook_dinner.png" alt="Dinner">
-                        <h4>Dinner</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="service-item">
-                        <a href="menu.html">
-                        <img src="assets/FoodC/img/cook_dessert.png" alt="Desserts">
-                        <h4>Desserts</h4>
+                        <a href="<?php echo site_url('/EastView/index');?>">
+                        <img src="assets/FoodC/img/eastern_map.jpg" alt="Eastern Dishes">
+                        <h4>Eastern Dishes</h4>
                         </a>
                     </div>
                 </div>
@@ -101,34 +93,31 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="food-item">
-                        <h2>Breakfast</h2>
-                        <img src="assets/FoodC/img/breakfast_item.jpg" alt="Breakfast">
-                        <div class="price">$4.50</div>
+                        <h2>Philippines</h2>
+                        <img src="assets/FoodC/img/champo.jpg" alt="">
                         <div class="text-content">
-                            <h4>Kale Chips Art Party</h4>
-                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean shorts hexagon street art knausgaard wolf...</p>
+                            <h4>Champorado</h4>
+                            <p>The Filipino Champorado originated from Mexico, from its popular hot chocolate drink, Champurrado. Champorado is a chocolate lover’s dream. It’s rich, decadent, sweet, and a mild nutty. Nutty? That’s because the rice brings out a certain nuttiness to the porridge.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="food-item">
-                        <h2>Lunch</h2>
-                        <img src="assets/FoodC/img/lunch_item.jpg" alt="">
-                        <div class="price">$7.50</div>
+                        <h2>Japan</h2>
+                        <img src="assets/FoodC/img/omu.jpg" alt="">
                         <div class="text-content">
-                            <h4>Taiyaki Gastro Tousled</h4>
-                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean shorts hexagon street art knausgaard wolf...</p>
+                            <h4>Omurice</h4>
+                            <p>Omurice (オムライス) is a loanword from both Omelette (omuretsu, オムレツ) and Rice (raisu, ライス). In this recipe, fried rice is seasoned with sweet and sour flavor of ketchup and tomato puree, and tucked inside a thin blanket of golden fluffy omelette.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="food-item">
-                        <h2>Dinner</h2>
-                        <img src="assets/FoodC/img/dinner_item.jpg" alt="">
-                        <div class="price">$12.50</div>
+                        <h2>Korea</h2>
+                        <img src="assets/FoodC/img/bulgogi.jpg" alt="">
                         <div class="text-content">
-                            <h4>Batch Squid Jean Shorts</h4>
-                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean shorts hexagon street art knausgaard wolf...</p>
+                            <h4>Bulgogi</h4>
+                            <p>Bulgogi (/bʊlˈɡoʊɡiː/ buul-GOH-ghee; from Korean bul-gogi), literally "fire meat", is a gui (Korean-style grilled or roasted dish) made of thin, marinated slices of beef or pork grilled on a barbecue or on a stove-top griddle.</p>
                         </div>
                     </div>
                 </div>
@@ -163,3 +152,25 @@
             </form>
         </div>
     </section>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 4000); // Change image every 3 seconds
+        }
+    </script>
