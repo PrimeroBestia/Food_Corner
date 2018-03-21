@@ -13,9 +13,14 @@ class AddCart extends CI_Controller {
 	public function add_cart()
 	{
 		if(isset($_SESSION['email'])){
-			$this->cart_model->add_cart();
-			$data['carts'] = $this->cart_model->get_cart($_SESSION['id']);
-			redirect(base_url()."cart");
+			$id = $this->input->post('r_id');
+			if($id != NULL){
+				$this->cart_model->add_cart();
+				redirect(base_url()."cart");
+			}
+			else{
+				redirect(base_url());
+			}
 		}
 		else{
 			redirect(base_url());
