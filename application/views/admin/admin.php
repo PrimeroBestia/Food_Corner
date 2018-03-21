@@ -77,9 +77,37 @@
                 <h3 class="panel-title">Website Overview</h3>
               </div>
               <div class="panel-body">
-                
+                <div class="col-md-3">
+                  <div class="well dash-box">
+                    <h2>200 </h2>
+                    <h4>Pending Orders</h4>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="well dash-box">
+                    <h2>200 </h2>
+                    <h4>Current Recipes</h4>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="well dash-box">
+                    <h2>200 </h2>
+                    <h4>Number of Users</h4>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="well dash-box">
+                    <h2> 200</h2>
+                    <h4>Total Profit</h4>
+                  </div>
+                </div>
+
+
               </div>
-              </div>
+            </div>
 
               <!-- Latest Users -->
               <div class="panel panel-default">
