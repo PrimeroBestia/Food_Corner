@@ -32,7 +32,7 @@
                                 </p>
                             <?php echo form_close();?>
                                             <p class="change_link">
-            									Don't have an account?
+            									Don't have an Account?
             								    <a href="<?php echo site_url('/SignupView');?>">Sign up</a>
             								</p>
                         </div>

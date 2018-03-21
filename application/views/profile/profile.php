@@ -17,14 +17,14 @@
 			</div>
 			<div class="content">
 				<h4>My Profile</h4>
-				<p>Manage and Protect your account</p>
+				<p>Manage and Protect your Account</p>
 				<?php if(true):?>
 					<div class="edit-profile">
 						<form>
-		                   	<input type="text" placeholder="full name">
-		                   	<input type="text" placeholder="username">
-		                   	<input type="text" placeholder="phone number">
-		                    <input type="text" placeholder="email address">
+		                   	<input type="text" placeholder="Full Name">
+		                   	<input type="text" placeholder="Username">
+		                   	<input type="text" placeholder="Phone Number">
+		                    <input type="text" placeholder="E-Mail Address">
 		                    <div class="button-edit">
 			                	<button type="submit" class="btn-saveedit">Save</button>
 			             	</div>

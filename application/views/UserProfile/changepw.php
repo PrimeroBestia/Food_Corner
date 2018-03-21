@@ -22,9 +22,9 @@
 				<h4>Change Password</h4>
 				<p>For your account's security, do not share your password with anyone else</p>
 				<div class="change-pw">
-					<input type="text" placeholder="current password">
-                   	<input type="text" placeholder="new password">
-                   	<input type="text" placeholder="confirm password">
+					<input type="text" placeholder="Current Password">
+                   	<input type="text" placeholder="New Password">
+                   	<input type="text" placeholder="Confirm Password">
                     <div class="button-edit">
 						<a href="myaccount.html" class="btn-canceledit">Cancel</a>
 						<a href="" class="btn-saveedit">Save</a>

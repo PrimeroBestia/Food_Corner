@@ -31,11 +31,11 @@
                 <div id="main-nav" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="<?php echo base_url();?>">Home</a></li>
-                        <li><a href="<?php echo site_url('/RecipeBook/index');?>">Recipe Book</a></li>
-                        <li><a href="<?php echo site_url('/AboutUsView/index');?>">About Us</a></li>
+                        <li><a href="<?php echo site_url('/RecipeBook');?>">Recipe Book</a></li>
+                        <li><a href="<?php echo site_url('/AboutUsView');?>">About Us</a></li>
                         <li><a href="<?php echo site_url('/cart');?>">MyCart</a></li>
-                        <li><a href="<?php echo site_url('/ProfileView/index');?>">My Profile</a></li>
-                        <li><div class="logout"><a href="<?php echo site_url('/LogOut/index')?>" class="btn-logout">Log Out</a></div></li>
+                        <li><a href="<?php echo site_url('/ProfileView');?>">My Profile</a></li>
+                        <li><div class="logout"><a href="<?php echo site_url('/LogOut')?>" class="btn-logout">Log Out</a></div></li>
                     </ul>
                     
                 </div>
