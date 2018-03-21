@@ -53,7 +53,7 @@ class customer_model extends CI_Model {
 			'c_mname' =>$this->input->post('mname'),
 			'c_lname' =>$this->input->post('lname'),
 			'c_email' =>$this->input->post('email'),
-			'c_pass' =>$enc_pass,
+			'c_pass' =>md5($enc_pass),
 			'c_pno' =>$this->input->post('phone'),
 			'acc_type' =>$user
 		);
@@ -105,10 +105,16 @@ class customer_model extends CI_Model {
 	}
 	public function check_account($password,$email){
 		$this->db->where('c_email',$email);
-		$this->db->where('c_pass',$password);
+		$pas = md5($password);
 		$result = $this->db->get('customer');
 		if($result->num_rows() == 1){
-			return true;
+			$hass = $result->row_array(0)['c_pass'];
+			if($pas == $hass){
+				return true;
+			} 
+			else{
+				return false;
+			}
 		}
 		else{
 			return false;
