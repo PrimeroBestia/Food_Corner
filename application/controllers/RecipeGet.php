@@ -15,14 +15,14 @@ class RecipeGet extends CI_Controller {
 		$data['recipe'] = $recipe;
 		$data['ingridients'] =$ingridients;
 		if($this->recipe_model->get_recipe($r_id)){
-			if (isset($_SESSION['username'])) {
+			if (isset($_SESSION['email'])) {
 				$this->load->view('template/headerlogin');
-				$this->load->view('Recipe2/RecipePage',$data);
+				$this->load->view('Recipe2/DishPage',$data);
 				$this->load->view('template/footer');
 			}
 			else{
 				$this->load->view('template/header');
-				$this->load->view('Recipe2/RecipePage',$data);
+				$this->load->view('Recipe2/DishPage',$data);
 				$this->load->view('template/footer');
 			}
 		}

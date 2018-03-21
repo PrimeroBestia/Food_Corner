@@ -47,11 +47,11 @@
         <!--/.container-->
     </div>
     <!--/.header-->
-
-    </head>
-
-<body>
     <div>
     <?php if(isset($_SESSION['alert'])): ?>
         <?php echo '<p class = "alert alert-success">'.$_SESSION['alert'].'</p>';$_SESSION['alert']=NULL;?>
     <?php endif;?>
+
+    </head>
+
+<body>
