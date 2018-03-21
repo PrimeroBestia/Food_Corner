@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2018 at 11:49 AM
+-- Generation Time: Mar 21, 2018 at 11:56 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -81,15 +81,14 @@ INSERT INTO `customer_address` (`caddress_id`, `address`, `c_id`, `address_id`) 
 --
 
 CREATE TABLE `customer_order` (
-  `order_id` varchar(60) NOT NULL,
-  `c_id` varchar(60) NOT NULL,
-  `r_id` varchar(60) NOT NULL,
-  `payment_id` varchar(60) NOT NULL,
-  `order_spec_id` varchar(60) NOT NULL,
+  `order_id` int(11) NOT NULL,
   `order_date` date NOT NULL,
   `order_price` varchar(60) NOT NULL,
   `order_comment` varchar(255) NOT NULL,
-  `order_status` varchar(60) NOT NULL
+  `order_status` varchar(60) NOT NULL,
+  `order_list_id` int(11) NOT NULL,
+  `c_id` int(11) NOT NULL,
+  `payment_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -185,14 +184,14 @@ CREATE TABLE `order_delivery` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_spec`
+-- Table structure for table `order_list`
 --
 
-CREATE TABLE `order_spec` (
-  `order_spec_id` varchar(60) NOT NULL,
-  `order_spec_name` varchar(60) NOT NULL,
-  `order_spec_price` varchar(60) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `order_list` (
+  `list_id` int(11) NOT NULL,
+  `r_id` int(11) NOT NULL,
+  `price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -271,11 +270,7 @@ ALTER TABLE `customer_address`
 --
 ALTER TABLE `customer_order`
   ADD PRIMARY KEY (`order_id`),
-  ADD UNIQUE KEY `c_id` (`c_id`),
-  ADD UNIQUE KEY `r_id` (`r_id`),
-  ADD UNIQUE KEY `payment_id` (`payment_id`),
-  ADD UNIQUE KEY `order_id` (`order_id`),
-  ADD UNIQUE KEY `order_spec_id` (`order_spec_id`);
+  ADD UNIQUE KEY `order_id` (`order_id`);
 
 --
 -- Indexes for table `customer_payment`
@@ -302,12 +297,6 @@ ALTER TABLE `my_cart`
 --
 ALTER TABLE `order_delivery`
   ADD PRIMARY KEY (`deliver_id`);
-
---
--- Indexes for table `order_spec`
---
-ALTER TABLE `order_spec`
-  ADD PRIMARY KEY (`order_spec_id`);
 
 --
 -- Indexes for table `recipe`
@@ -344,6 +333,12 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `customer_address`
   MODIFY `caddress_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `customer_order`
+--
+ALTER TABLE `customer_order`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `recipe`
