@@ -33,7 +33,7 @@
                         <li><a href="<?php echo base_url();?>">Home</a></li>
                         <li><a href="<?php echo site_url('/RecipeBook/index');?>">Recipe Book</a></li>
                         <li><a href="<?php echo site_url('/AboutUsView/index');?>">About Us</a></li>
-                        <li><a href="">MyCart</a></li>
+                        <li><a href="<?php echo site_url('/cart');?>">MyCart</a></li>
                         <li><a href="<?php echo site_url('/ProfileView/index');?>">My Profile</a></li>
                         <li><div class="logout"><a href="<?php echo site_url('/LogOut/index')?>" class="btn-logout">Log Out</a></div></li>
                     </ul>
