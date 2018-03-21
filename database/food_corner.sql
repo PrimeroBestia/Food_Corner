@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2018 at 10:11 AM
+-- Generation Time: Mar 21, 2018 at 11:49 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -206,20 +206,34 @@ CREATE TABLE `recipe` (
   `r_name` varchar(60) NOT NULL,
   `r_type` varchar(255) NOT NULL,
   `r_time_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `r_region` varchar(60) NOT NULL,
+  `r_id_region` varchar(60) NOT NULL,
   `r_country` varchar(60) NOT NULL,
   `r_photo` varchar(255) NOT NULL,
-  `recipe_text` varchar(1000) NOT NULL
+  `recipe_text` varchar(1000) NOT NULL,
+  `r_description` text NOT NULL,
+  `r_price` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `recipe`
+-- Table structure for table `region`
 --
 
-INSERT INTO `recipe` (`r_id`, `ing_list_id`, `r_name`, `r_type`, `r_time_created`, `r_region`, `r_country`, `r_photo`, `recipe_text`) VALUES
-(1, 1, 'Test', 'test', '2018-03-16 13:58:52', 'west', 'PH', 'assets/Recipe/img/1.jpg', 'Recipe'),
-(2, 2, 'Test', 'Test', '2018-03-16 14:14:12', 'west', 'PH', 'assets/Recipe/img/2.jpg', 'Recipe'),
-(3, 3, 'Mash Potato', 'Snack', '2018-03-20 18:00:07', 'east', 'Asia', 'assets\\Recipe\\img\\3.jpeg', 'Bring a pot of salted water to a boil. Add potatoes and cook until tender but still firm, about 15 minutes; drain.\r\nIn a small saucepan heat butter and milk over low heat until butter is melted. Using a potato masher or electric beater, slowly blend milk mixture into potatoes until smooth and creamy. Season with salt and pepper to taste.');
+CREATE TABLE `region` (
+  `region_id` int(11) NOT NULL,
+  `region_name` varchar(255) NOT NULL,
+  `region_photo` varchar(255) NOT NULL,
+  `region_description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `region`
+--
+
+INSERT INTO `region` (`region_id`, `region_name`, `region_photo`, `region_description`) VALUES
+(1, 'West', 'assets/Recipe/img/rec1.jpg', 'Find the best, easy fast meal ideas from Western food recipes.'),
+(2, 'East', 'assets/Recipe/img/rec1.jpg', 'Find the best, easy fast meal ideas from Eastern food recipes.');
 
 -- --------------------------------------------------------
 
@@ -304,6 +318,12 @@ ALTER TABLE `recipe`
   ADD UNIQUE KEY `r_id` (`r_id`);
 
 --
+-- Indexes for table `region`
+--
+ALTER TABLE `region`
+  ADD PRIMARY KEY (`region_id`);
+
+--
 -- Indexes for table `suppliers`
 --
 ALTER TABLE `suppliers`
@@ -330,6 +350,12 @@ ALTER TABLE `customer_address`
 --
 ALTER TABLE `recipe`
   MODIFY `r_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `region`
+--
+ALTER TABLE `region`
+  MODIFY `region_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -17,7 +17,7 @@
         <div class="header">
             <nav class="navbar navbar-inverse" role="navigation">
                 <div id="logo-nav">
-                    <img src="assets/FoodC/img/logo-nav.png" alt="">
+                    <img src="<?php echo base_url(); ?>assets/FoodC/img/logo-nav.png" alt="">
                 </div>
                 <div class="navbar-header">
                     <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">

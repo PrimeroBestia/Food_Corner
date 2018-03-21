@@ -7,14 +7,16 @@ class RecipeBook extends CI_Controller {
 		$this->load->helper('url');
 	}
 	public function index()
-	{	if (isset($_SESSION['email'])) {
+	{	
+		$data['regions'] = $this->region_model->get_region();
+		if (isset($_SESSION['email'])) {
 			$this->load->view('template/headerlogin');
-			$this->load->view('Recipe2/RecipeBook');
+			$this->load->view('Recipe2/RecipeBook',$data);
 			$this->load->view('template/footer');
 		}
 		else{
 			$this->load->view('template/header');
-			$this->load->view('Recipe2/RecipeBook');
+			$this->load->view('Recipe2/RecipeBook',$data);
 			$this->load->view('template/footer');
 		}	
 	}

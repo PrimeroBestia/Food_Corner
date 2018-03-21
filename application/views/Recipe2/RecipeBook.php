@@ -9,22 +9,16 @@
         	<br /><br />
             <h1>Recipes</span></h1>
             <div class="main">
-                <div class="view view-fifth">
-                    <img src="<?php echo base_url('assets/Recipe/img/rec1.jpg'); ?>" />
-                    <div class="mask">
-                        <h2>Western Dishes</h2>
-                        <p>Find the best, easy fast meal ideas from Western food recipes. </p>
-                        <a href="<?php echo site_url('/regions/region/west');?>" class="info">View Dishes</a>
+                <?php foreach($regions as $region): ?>
+                    <div class="view view-fifth">
+                        <img src="<?php echo base_url($region['region_photo']); ?>" />
+                        <div class="mask">
+                            <h2><?php echo $region['region_name']; ?> Dishes</h2>
+                            <p><?php echo $region['region_description']; ?> </p>
+                            <a href="<?php echo site_url('/regions/region/'.$region['region_id']);?>" class="info">View Dishes</a>
+                        </div>
                     </div>
-                </div>
-                <div class="view view-fifth">
-                    <img src="<?php echo base_url('assets/Recipe/img/rec2.jpg'); ?>" />
-                    <div class="mask">
-                        <h2>Eastern Dishes</h2>
-                        <p>Find the best, easy fast meal ideas from Eastern food recipes. </p>
-                        <a href="<?php echo site_url('/regions/region/east');?>" class="info">View Dishes</a>
-                    </div>
-                </div>
+                <?php endforeach;?>
             </div>
         </div><br /><br /><br />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
