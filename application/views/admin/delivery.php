@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Area | Dashboard</title>
+    <title>Admin Area | Delivery</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="http://localhost/Food_Corner/assets/Admin/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="http://localhost/Food_Corner/assets/Admin/css/style.css" >
+    <link href="http://localhost/Food_Corner/assets/Admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost/Food_Corner/assets/Admin/css/style.css" rel="stylesheet">
     <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
   </head>
   <body>
@@ -25,8 +25,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="<?php echo site_url('/AdminView');?>">Dashboard</a></li>
-            <li><a href="<?php echo site_url('/AdminView/delivery');?>">Delivery</a></li>
+            <li><a href="<?php echo site_url('/AdminView');?>">Dashboard</a></li>
+            <li class="active"><a href="<?php echo site_url('/AdminView/delivery');?>">Delivery</a></li>
             <li><a href="<?php echo site_url('/AdminView/recipe');?>">Recipe</a></li>
             <li><a href="<?php echo site_url('/AdminView/users');?>">Users</a></li>
           </ul>
@@ -41,7 +41,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10">
-            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard </h1>
+            <h1>Delivery</h1>
           </div>
         </div>
       </div>
@@ -50,7 +50,8 @@
     <section id="breadcrumb">
       <div class="container">
         <ol class="breadcrumb">
-          <li class="active">Dashboard</li>
+          <li><a>Dashboard</a></li>
+          <li class="active">Delivery</li>
         </ol>
       </div>
     </section>
@@ -63,30 +64,19 @@
               <a href="<?php echo site_url('/AdminView');?>" class="list-group-item active main-color-bg">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
               </a>
-              <a href="<?php echo site_url('/AdminView/delivery');?>" class="list-group-item"> Delivery </a>
-              <a href="<?php echo site_url('/AdminView/recipe');?>" class="list-group-item"> Recipe </a>
-              <a href="<?php echo site_url('/AdminView/users');?>" class="list-group-item"> Users </a>
+              <a href="<?php echo site_url('/AdminView/delivery');?>" class="list-group-item">Delivery</a>
+              <a href="<?php echo site_url('/AdminView/recipe');?>" class="list-group-item">Recipe</a>
+              <a href="<?php echo site_url('/AdminView/users');?>" class="list-group-item">Users</a>
             </div>
           </div>
           <div class="col-md-9">
             <!-- Website Overview -->
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">Website Overview</h3>
+                <h3 class="panel-title">Delivery</h3>
               </div>
-              <div class="panel-body">
-                
+              <div class="panel-body">              
               </div>
-              </div>
-
-              <!-- Latest Users -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Latest Users</h3>
-                </div>
-                <div class="panel-body">
-                  
-                </div>
               </div>
           </div>
         </div>
@@ -98,9 +88,6 @@
     </footer>
 
     <!-- Modals -->
-
-    <!-- Add Page -->
-
   <script>
      CKEDITOR.replace( 'editor1' );
  </script>
