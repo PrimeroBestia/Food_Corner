@@ -19,11 +19,9 @@
 				</ul>
 			</div>
 
-			<div class="up-content">
+			<div class="content">
 				<div class="tabs">
 					<ul>
-						<li><a href="<?php echo site_url('/ProfileView/mp_topay');?>">TO PAY</a></li>
-						<li><a href="<?php echo site_url('/ProfileView/mp_toship');?>">TO SHIP</a></li>
 						<li><a href="<?php echo site_url('/ProfileView/mp_torecieved');?>">TO RECEIVE</a></li>
 						<li><a href="<?php echo site_url('/ProfileView/mp_completed');?>">COMPLETED</a></li>
 						<li><a href="<?php echo site_url('/ProfileView/mp_cancelled');?>" class="cancelled">CANCELLED</a></li>
