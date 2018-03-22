@@ -18,25 +18,48 @@
 			<div class="content">
 				<h4>My Profile</h4>
 				<p>Manage and Protect your Account</p>
-				<?php if(true):?>
+				<?php if($user['c_fname']==NULL):?>
 					<div class="edit-profile">
 						<?php echo validation_errors(); ?>
-                        <?php echo form_open('profile/edit');?>
-                        
+                        <?php echo form_open('profile/update/');?>
 						<form>
-		                   	<input id="namechange" name="fname" type="text" placeholder="First Name">
-		                   	<input id="namechange2" name="mname" type="text" placeholder="Middle Name">
-		                   	<input id="namechange3" name="lname" type="text" placeholder="Last Name">
-		                   	<input id="phonechange" name="phone" type="text" placeholder="Phone Number">
-		                    <input id="emailchange" name="email" type="text" placeholder="E-Mail Address">
+		                   	<input name="fname" type="text" placeholder="First Name" required>
+		                   	<input name="mname" type="text" placeholder="Middle Name" required>
+		                   	<input name="lname" type="text" placeholder="Last Name" required>
 		                    <div class="button-edit">
-			                	<button type="submit" value="Sign Up" class="btn-saveedit">Save</button>
+			                	<button type="submit" class="btn-saveedit">Save</button>
 			             	</div>
 		            	</form>
 	                </div>
-            	<?php else:
-            		//PRINT GET PROFILE
-            	 endif;?>
+            	<?php else:?>
+            		<div class="table-align">
+						<table class="table-info">
+                    		<tr>
+                        		<td>First Name:</td>
+                        		<td><?php echo $user['c_fname'];?></td>
+                      		</tr>
+
+		                    <tr>
+                        		<td>Middle Name:</td>
+                       	 		<td><?php echo $user['c_mname'];?></td>
+                      		</tr>
+
+		                    <tr>
+                        		<td>Last Name:</td>
+                        		<td><?php echo $user['c_lname'];?></td>
+                      		</tr>
+
+                      		<tr>
+                        		<td>Phone Number:</td>
+                        		<td><?php echo $user['c_pno'];?> </td>
+                      		</tr>
+                  		</table>
+
+                  		<div class="editinfo">
+							<a href="<?php echo site_url('/ProfileView/profile_edit');?>" class="btn-editinfo">Change It </a>
+						</div>
+					</div>
+            	<?php endif;?>
 			</div> 	
 	</div>
 	<br>

@@ -74,6 +74,10 @@ class customer_model extends CI_Model {
 			return false;
 		}
 	}
+	public function get_user(){
+		$query=$this->db->get_where('customer',array('c_id'=>$_SESSION['id']));
+		return $query->row_array(0);
+	}
 	public function check_email_exists($email){
 		$query=$this->db->get_where('customer',array('c_email'=>$email));
 		if(empty($query->row_array())){
@@ -119,5 +123,24 @@ class customer_model extends CI_Model {
 		else{
 			return false;
 		}
+	}
+	public function update_user(){
+		$data =array(
+			'c_fname' => $this->input->post('fname'),
+			'c_mname' => $this->input->post('mname'),
+			'c_lname' => $this->input->post('lname')
+		);
+		$this->db->where('c_id',$_SESSION['id']);
+		return $this->db->update('customer',$data);
+	}
+	public function update_users(){
+		$data =array(
+			'c_fname' => $this->input->post('fname'),
+			'c_mname' => $this->input->post('mname'),
+			'c_lname' => $this->input->post('lname'),
+			'c_pno' => $this->input->post('pno')
+		);
+		$this->db->where('c_id',$_SESSION['id']);
+		return $this->db->update('customer',$data);
 	}
 }

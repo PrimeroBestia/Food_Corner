@@ -12,7 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Recipe/css/demo2.css'); ?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/Recipe/css/component.css'); ?>" />
 		<script src="js/snap.svg-min.js"></script>
-	<h1 text align = "center">Western Dishes</h1>
+		<h1 text align = "center">Western Dishes</h1>
 			<section id="grid" class="grid clearfix">
 				<?php foreach($recipes as $recipe):?>
 				<a href="<?php echo site_url('recipe/'.$recipe['r_id']);?>" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
