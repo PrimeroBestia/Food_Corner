@@ -8,7 +8,7 @@
     <!-- Bootstrap core CSS -->
     <link href="http://localhost/Food_Corner/assets/Admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://localhost/Food_Corner/assets/Admin/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo base_url('assets/Admin/css/newstyle.css');?>"
+    <link rel="stylesheet" href="<?php echo base_url('assets/Admin/css/newstyle.css');?>">
     <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
   </head>
   <body>
@@ -76,22 +76,13 @@
             <!-- Website Overview -->
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">Delivery</h3>
+                <h3 class="panel-title">Pending Orders</h3>
               </div>
-              <div class="panel-body">  
-                <div class="col-md-3">
-                  <div class="well dash-box">
-                    <h3>number of pending orders </h3>
-                    <h4>Pending Orders</h4>
-                  </div>
+              <div class="panel-body"> 
+                <div class="cont">
+                </div> 
               </div>
-              <div class="wrapper">
-                <button class="button">Button</button>
-                <button class="button">Buttos</button>
-              </div>
-              </div>
-          </div>
-        </div>
+            </div>
       </div>
     </section>
 
@@ -100,6 +91,8 @@
     </footer>
 
     <!-- Modals -->
+    <!-- Add Page -->
+
   <script>
      CKEDITOR.replace( 'editor1' );
  </script>
