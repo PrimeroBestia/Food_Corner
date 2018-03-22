@@ -17,26 +17,26 @@
                                 </p>-->
                                 <p>
                                     <label for="emailsignup" class="youmail" data-icon="e" > Email</label>
-                                    <input id="emailsignup" name="email"  type="email" placeholder="john@mail.com"/>
+                                    <input id="emailsignup" name="email"  type="email" placeholder="john@mail.com" required>
                                 </p>
                                 <p>
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">Password </label>
-                                    <input id="passwordsignup" name="password"  type="password" placeholder="*********"/>
+                                    <input id="passwordsignup" name="password"  type="password" placeholder="*********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                                 </p>
                                 <p>
                                     <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="cpassword"  type="password" placeholder="*********"/>
+                                    <input id="passwordsignup_confirm" name="cpassword"  type="password" placeholder="*********" required>
                                 </p>
                                 <p>
                                     <label for="usernamesignup" class="uname" data-icon="u">Phone</label>
-                                    <input id="usernamesignup" name="phone"  type="text" placeholder="0999-999-9999" />
+                                    <input id="usernamesignup" name="phone"  type="text" placeholder="0999-999-9999" required>
                                 </p>
                                 <p>
                                     <label for="usernamesignup" class="uname" data-icon="u">Address</label>
-                                    <input id="usernamesignup" name="caddress"  type="text" placeholder="123 Layo St. Daan District, Manila, Philippines" />
+                                    <input id="usernamesignup" name="caddress"  type="text" placeholder="123 Layo St. Daan District, Manila, Philippines" required>
                                 </p>
                                 <p class="signin button">
-									                         <input type="submit" value="Sign up"/>
+									                         <input type="submit" value="Sign up">
 								                                 </p>
                                                       <?php echo form_close();?>
                                                       <p class="change_link">

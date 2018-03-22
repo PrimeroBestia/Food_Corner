@@ -50,8 +50,8 @@
                   		</table>
 
                   		<div class="editinfo">
-						<a href="<?php echo site_url('/ProfileView/profile');?>" class="btn-editinfo">Change It </a>
-					</div>
+							<a href="<?php echo site_url('/ProfileView/profile');?>" class="btn-editinfo">Change It </a>
+						</div>
 					</div>
 			</div>
 	</div>

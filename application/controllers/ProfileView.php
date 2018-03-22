@@ -8,14 +8,20 @@ class ProfileView extends CI_Controller {
 	}
 	public function index()
 	{	
+		$data['user']=$this->customer_model->get_user();
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
-			$this->load->view('profile/profile');
+			$this->load->view('profile/profile',$data);
 			$this->load->view('template/footer');
 		}
 		else{
 			redirect(base_url());
 		}
+	}
+
+	public function update_user(){
+		$this->customer_model->update_user();
+		redirect(base_url('ProfileView/index'));
 	}
 	public function addresses()
 	{
@@ -151,11 +157,12 @@ class ProfileView extends CI_Controller {
 			redirect(base_url());
 		}
 	}
-	public function profile()
+	public function profile_edit()
 	{
+		$data['user']=$this->customer_model->get_user();
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/profile');
+			$this->load->view('UserProfile/profile',$data);
 			$this->load->view('template/footer');
 		}
 		else{
