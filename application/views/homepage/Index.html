@@ -7,9 +7,9 @@
         <title>Food Corner</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/carousel.css">
+	<link rel="stylesheet" href="css/carousel.css">
         <link rel="stylesheet" href="css/fontAwesome.css">
         <link rel="stylesheet" href="css/templatemo-style.css">
 
@@ -54,23 +54,13 @@
     <!--/.header-->
 
 
-    <section class="slideshow-container">
-				<div class="mySlides fade">
-					<img src="img/3.jpg" style="width:100%">
-				</div>
-
-				<div class="mySlides fade">
-					<img src="img/4.jpg" style="width:100%">
-				</div>
-
-				<div class="mySlides fade">
-					<img src="img/5.jpg" style="width:100%">
-				</div>
-
-    </section>
-
-
-
+	
+<div class="w3-content w3-section" style="max-width:2000px">
+ 	<img class="mySlides w3-animate-fading" src="img/3.jpg" style="width:100%">
+  	<img class="mySlides w3-animate-fading" src="img/4.jpg" style="width:100%">
+  	<img class="mySlides w3-animate-fading" src="img/5.jpg" style="width:100%">
+</div>
+  
     <section class="cook-delecious">
         <div class="container">
             <div class="row">
@@ -219,25 +209,20 @@
     </footer>
 	
 	<script>
-		var slideIndex = 0;
-		showSlides();
+	var myIndex = 0;
+	carousel();
 
-		function showSlides() {
-			var i;
-			var slides = document.getElementsByClassName("mySlides");
-			var dots = document.getElementsByClassName("dot");
-			for (i = 0; i < slides.length; i++) {
-				slides[i].style.display = "none";  
-			}
-			slideIndex++;
-			if (slideIndex > slides.length) {slideIndex = 1}    
-			for (i = 0; i < dots.length; i++) {
-				dots[i].className = dots[i].className.replace(" active", "");
-			}
-			slides[slideIndex-1].style.display = "block";  
-			dots[slideIndex-1].className += " active";
-			setTimeout(showSlides, 4000); // Change image every 3 seconds
-		}
+	function carousel() {
+    	var i;
+    	var x = document.getElementsByClassName("mySlides");
+    	for (i = 0; i < x.length; i++) {
+       		x[i].style.display = "none";  
+    	}
+   	 myIndex++;
+   	 if (myIndex > x.length) {myIndex = 1}    
+   	 x[myIndex-1].style.display = "block";  
+    	setTimeout(carousel, 3000);    
+	}
 	</script>
 
 </body>
