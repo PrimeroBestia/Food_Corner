@@ -101,43 +101,44 @@
                     <select name="ingred">
                       <option>--select ingredient--</option>
                       <option value="patola">PATOLA</option>
-                    </select><br>
+                    </select><br><br>
                     <select name="ingred2">
                       <option>--select ingredient--</option>
                       <option value="patola">PATOLA</option>
-                    </select><br>
+                    </select><br><br>
                     <select name="ingred3">
                       <option>--select ingredient--</option>
                       <option value="patola">PATOLA</option>
-                    </select><br>
+                    </select><br><br>
                     <select name="ingred4">
                       <option>--select ingredient--</option>
                       <option value="patola">PATOLA</option>
-                    </select><br>
+                    </select><br><br>
                     <select name="ingred5">
                       <option>--select ingredient--</option>
                       <option value="patola">PATOLA</option>
-                    </select><br>
+                    </select><br><br>
                     <select name="ingred6">
                       <option>--select ingredient--</option>
                       <option value="patola">PATOLA</option>
-                    </select><br>
+                    </select><br><br>
                     <select name="ingred7">
                       <option>--select ingredient--</option>
                       <option value="patola">PATOLA</option>
-                    </select><br>
+                    </select><br><br>
                     <select name="ingred8">
                       <option>--select ingredient--</option>
                       <option value="patola">PATOLA</option>
-                    </select><br>
+                    </select><br><br>
                     <select name="ingred9">
                       <option>--select ingredient--</option>
                       <option value="patola">PATOLA</option>
-                    </select><br>
+                    </select><br><br>
                     <select name="ingred10">
                       <option>--select ingredient--</option>
                       <option value="patola">PATOLA</option>
-                    </select><br>
+                    </select><br><br>
+                    <input type="submit" value="ADD RECIPE">
                   </form>
                 </div>
               </div>
