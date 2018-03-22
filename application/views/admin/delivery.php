@@ -8,7 +8,6 @@
     <!-- Bootstrap core CSS -->
     <link href="http://localhost/Food_Corner/assets/Admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://localhost/Food_Corner/assets/Admin/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo base_url('assets/Admin/css/newstyle.css');?>">
     <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
   </head>
   <body>
@@ -30,7 +29,6 @@
             <li class="active"><a href="<?php echo site_url('/AdminView/delivery');?>">Delivery</a></li>
             <li><a href="<?php echo site_url('/AdminView/recipe');?>">Recipe</a></li>
             <li><a href="<?php echo site_url('/AdminView/users');?>">Users</a></li>
-            <li><a href="">Region</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a>Welcome Admin</a></li>
@@ -69,7 +67,6 @@
               <a href="<?php echo site_url('/AdminView/delivery');?>" class="list-group-item">Delivery</a>
               <a href="<?php echo site_url('/AdminView/recipe');?>" class="list-group-item">Recipe</a>
               <a href="<?php echo site_url('/AdminView/users');?>" class="list-group-item">Users</a>
-              <a href="" class="list-group-item">Region</a>
             </div>
           </div>
           <div class="col-md-9">
@@ -79,11 +76,28 @@
                 <h3 class="panel-title">Pending Orders</h3>
               </div>
               <div class="panel-body"> 
-                <div class="cont">
+                <table class="table table-striped table-hover">
+                    <thead>  
+                      <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th></th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                      <tr>
+                        <td><!--input name--></td>
+                        <td><!--input address--></td>
+                        <td></td>
+                        <td><!--input status--></td>
+                      </tr>
+                  </table>
+
                 </div> 
               </div>
             </div>
       </div>
+    </div>
     </section>
 
     <footer id="footer">
