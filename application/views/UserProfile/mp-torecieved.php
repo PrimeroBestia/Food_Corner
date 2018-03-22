@@ -22,17 +22,34 @@
 			<div class="content">
 				<div class="tabs">
 					<ul>
-						<li><a href="<?php echo site_url('/ProfileView/mp_to_recieved');?>" class="torecieved">TO RECEIVE</a></li>
+						<li><a href="<?php echo site_url('/ProfileView/mp_torecieved');?>" class="torecieved">TO RECEIVE</a></li>
 						<li><a href="<?php echo site_url('/ProfileView/mp_completed');?>">COMPLETED</a></li>
 						<li><a href="<?php echo site_url('/ProfileView/mp_cancelled');?>">CANCELLED</a></li>
 					</ul>
 				</div>
-
-			<div class="down-content">
+			<div class="content">
 				<div class="textalign">
-					<h4>NO ORDERS YET</h4>
-					<div class="ordernow">
-						<a href="" class="btn btn-ordernow">Order Now</a>
+					<div class="textalign">
+						<?php if(empty($orders)):?>
+							<h4>NO ORDERS YET</h4>
+							<div class="ordernow">
+								<a href="<?php echo base_url('RecipeBook');?>" class="btn btn-ordernow">Order Now</a>
+							</div>
+						<?php else:?>
+							<?php //Table for Orders?>
+							<table>
+								<tr>
+									<td>|Order ID</td><td>|Time</td><td>|Price</td>
+								</tr>
+								<?php foreach ($orders as $order): ?>
+									<?php if($order['order_status']==0): ?>
+									<tr>
+										<td>|<?php echo $order['order_id']?></td><td>|<?php echo $order['order_date']?></td><td>|<?php echo $order['order_price']?></td>
+									</tr>
+									<?php endif; ?>
+								<?php endforeach; ?>
+							</table>
+						<?php endif;?>
 					</div>
 				</div>
 			</div>

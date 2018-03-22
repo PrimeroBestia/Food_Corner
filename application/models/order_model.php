@@ -20,7 +20,7 @@ class order_model extends CI_Model {
 			);
 			$this->db->insert('order_list',$data2);
 		}
-		$this->cart_model->delete_cart($_SESSION['id']);
+		$this->cart_model->delete_carts($_SESSION['id']);
 		$data3 = array(
 			'order_list_id' => $result['order_id']
 		);
@@ -32,5 +32,11 @@ class order_model extends CI_Model {
 		$this->db->order_by('order_date','DESC');
 		$result = $this->db->get('customer_order');
 		return $result->row_array(0);
+	}
+	public function get_orders(){
+		$this->db->where('c_id',$_SESSION['id']);
+		$this->db->order_by('order_date','DESC');
+		$result = $this->db->get('customer_order');
+		return $result->result_array();
 	}
 }

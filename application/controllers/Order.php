@@ -11,7 +11,7 @@ class Order extends CI_Controller {
 		if(isset($_SESSION['email'])){
 			$recipes = $this->cart_model->empty_cart();
 			if(!$recipes){
-				return $this->order_model->add_order();
+				$this->order_model->add_order();
 				redirect(base_url());
 			}
 			else{

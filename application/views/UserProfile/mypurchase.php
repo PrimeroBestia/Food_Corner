@@ -29,10 +29,41 @@
 
 				<div class="down-content">
 					<div class="textalign">
-						<h4>NO ORDERS YET</h4>
-						<div class="ordernow">
-							<a href="<?php echo base_url('RecipeBook');?>" class="btn btn-ordernow">Order Now</a>
-						</div>
+						<?php if(empty($orders)):?>
+							<h4>NO ORDERS YET</h4>
+							<div class="ordernow">
+								<a href="<?php echo base_url('RecipeBook');?>" class="btn btn-ordernow">Order Now</a>
+							</div>
+						<?php else:?>
+							<?php //Table for Orders?>
+							<table>
+								<tr>
+									<td>|Order ID</td><td>|Time</td><td>|Price</td><td>|Status</td>
+								</tr>
+								<?php foreach ($orders as $order): ?>
+									<?php if(true): ?>
+									<tr>
+										<td>|<?php echo $order['order_id']?></td><td>|<?php echo $order['order_date']?></td><td>|<?php echo $order['order_price']?></td>
+										<td>|
+											<?php
+												switch($order['order_status']){
+													case 0:
+															echo "Delivering";
+															break;
+													case 1:
+															echo "Delivered";
+															break;
+													case 2:
+															echo "Cancelled";
+															break;
+												}
+											?>
+										</td>
+									</tr>
+									<?php endif; ?>
+								<?php endforeach; ?>
+							</table>
+						<?php endif;?>
 					</div>
 				</div>
 			</div>

@@ -69,11 +69,24 @@ class ProfileView extends CI_Controller {
 	}
 	public function mp_cancelled()
 	{
+		$data['orders'] = $this->order_model->get_orders();
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
 
-			$this->load->view('UserProfile/mp-cancelled');
+			$this->load->view('UserProfile/mp-cancelled',$data);
 
+			$this->load->view('template/footer');
+		}
+		else{
+			redirect(base_url());
+		}
+	}
+	public function mypurchase()
+	{
+		$data['orders'] = $this->order_model->get_orders();
+		if(isset($_SESSION['email'])){
+			$this->load->view('template/headerlogin');
+			$this->load->view('UserProfile/mypurchase',$data);
 			$this->load->view('template/footer');
 		}
 		else{
@@ -82,20 +95,10 @@ class ProfileView extends CI_Controller {
 	}
 	public function mp_completed()
 	{
+		$data['orders'] = $this->order_model->get_orders();
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/mp-completed');
-			$this->load->view('template/footer');
-		}
-		else{
-			redirect(base_url());
-		}
-	}
-	public function mp_topay()
-	{
-		if(isset($_SESSION['email'])){
-			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/mp-topay');
+			$this->load->view('UserProfile/mp-completed',$data);
 			$this->load->view('template/footer');
 		}
 		else{
@@ -104,20 +107,10 @@ class ProfileView extends CI_Controller {
 	}
 	public function mp_torecieved()
 	{
+		$data['orders'] = $this->order_model->get_orders();
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/mp-torecieved');
-			$this->load->view('template/footer');
-		}
-		else{
-			redirect(base_url());
-		}
-	}
-	public function mp_toship()
-	{
-		if(isset($_SESSION['email'])){
-			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/mp-toship');
+			$this->load->view('UserProfile/mp-torecieved',$data);
 			$this->load->view('template/footer');
 		}
 		else{
@@ -140,17 +133,6 @@ class ProfileView extends CI_Controller {
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
 			$this->load->view('UserProfile/mycart');
-			$this->load->view('template/footer');
-		}
-		else{
-			redirect(base_url());
-		}
-	}
-	public function mypurchase()
-	{
-		if(isset($_SESSION['email'])){
-			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/mypurchase');
 			$this->load->view('template/footer');
 		}
 		else{
