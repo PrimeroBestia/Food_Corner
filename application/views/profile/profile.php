@@ -20,20 +20,24 @@
 				<p>Manage and Protect your Account</p>
 				<?php if(true):?>
 					<div class="edit-profile">
+						<?php echo validation_errors(); ?>
+                        <?php echo form_open('profile/edit');?>
+                        
 						<form>
-		                   	<input type="text" placeholder="Full Name">
-		                   	<input type="text" placeholder="Username">
-		                   	<input type="text" placeholder="Phone Number">
-		                    <input type="text" placeholder="E-Mail Address">
+		                   	<input id="namechange" name="fname" type="text" placeholder="First Name">
+		                   	<input id="namechange2" name="mname" type="text" placeholder="Middle Name">
+		                   	<input id="namechange3" name="lname" type="text" placeholder="Last Name">
+		                   	<input id="phonechange" name="phone" type="text" placeholder="Phone Number">
+		                    <input id="emailchange" name="email" type="text" placeholder="E-Mail Address">
 		                    <div class="button-edit">
-			                	<button type="submit" class="btn-saveedit">Save</button>
+			                	<button type="submit" value="Sign Up" class="btn-saveedit">Save</button>
 			             	</div>
 		            	</form>
 	                </div>
             	<?php else:
             		//PRINT GET PROFILE
             	 endif;?>
-			</div>
+			</div> 	
 	</div>
 	<br>
 	<br>

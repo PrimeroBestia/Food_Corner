@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-md-5 col-sm-10 col-xs-15">
                     <div class="service-item">
-                        <a href="<?php echo site_url('/WestView/index');?>">
+                        <a href="<?php echo site_url('/WestView');?>">
                         <img src="assets/FoodC/img/western_map.jpg" alt="Western Dishes">
                         <h4>Western Dishes</h4>
                         </a>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-md-5 col-sm-10 col-xs-1">
                     <div class="service-item">
-                        <a href="<?php echo site_url('/EastView/index');?>">
+                        <a href="<?php echo site_url('/EastView');?>">
                         <img src="assets/FoodC/img/eastern_map.jpg" alt="Eastern Dishes">
                         <h4>Eastern Dishes</h4>
                         </a>
