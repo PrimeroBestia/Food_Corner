@@ -21,7 +21,7 @@
 						<img src="<?php echo $recipe['r_photo'] ?>" />
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "/></svg>
 						<figcaption>
-							<h2><?php echo $recipe['r_name'];?></h2>
+							<h2><?php echo $recipe['r_name'];?><br><br></h2>
 							<button>View Recipe</button>
 						</figcaption>
 					</figure>
