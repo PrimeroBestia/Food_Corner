@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Area | Recipe</title>
+    <title>Admin Area | Add Recipe</title>
     <!-- Bootstrap core CSS -->
     <link href="http://localhost/Food_Corner/assets/Admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://localhost/Food_Corner/assets/Admin/css/style.css" rel="stylesheet">
@@ -52,7 +52,7 @@
       <div class="container">
         <ol class="breadcrumb">
           <li><a>Dashboard</a></li>
-          <li class="active">Recipe</li>
+          <li class="active">Add Recipe</li>
         </ol>
       </div>
     </section>
@@ -75,13 +75,11 @@
             <!-- Website Overview -->
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">Recipe</h3>
+                <h3 class="panel-title">Add Recipe</h3>
               </div>
               <div class="panel-body">
                 <div class=padd>
-                  <h2>Welcome to Recipe</h2>
-                  <br>
-                  <a class="giff" href="<?php echo base_url('/AdminView/addrecipe');?>"><h4>Add Recipe</h4></button>
+                  
                 </div>
               </div>
               </div>
