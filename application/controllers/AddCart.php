@@ -38,4 +38,19 @@ class AddCart extends CI_Controller {
 			redirect(base_url());
 		}
 	}
-}
+	public function delete_cart($rid)
+	{
+		if(isset($_SESSION['email'])){
+			$id = $rid;
+			if($id != NULL){
+				$this->cart_model->delete_cart($rid);
+				redirect(base_url()."cart");
+			}
+			else{
+				redirect(base_url());
+			}
+		}
+		else{
+			redirect(base_url());
+		}
+	}}

@@ -22,9 +22,9 @@
 				<h4>Change Password</h4>
 				<p>For your account's security, do not share your password with anyone else</p>
 				<div class="change-pw">
-					<input type="password" placeholder="Current Password" required>
-                   	<input type="password" placeholder="New Password" required>
-                   	<input type="password" placeholder="Confirm Password" required>
+					<input type="password" name = "pass" placeholder="Current Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                   	<input type="password" name = "npass" placeholder="New Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                   	<input type="password" name = "cpass" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                     <div class="button-edit">
 						<a href="" class="btn-saveedit">Save</a>
 					</div>

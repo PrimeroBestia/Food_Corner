@@ -57,6 +57,11 @@ class cart_model extends CI_Model {
 	}
 
 	public function delete_cart($id){
+		$this->db->where('r_id',$id);
+		return $result = $this->db->delete('my_cart');
+	}
+
+	public function delete_carts($id){
 		$this->db->where('c_id',$id);
 		return $result = $this->db->delete('my_cart');
 	}

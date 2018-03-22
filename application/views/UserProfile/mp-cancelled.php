@@ -31,9 +31,20 @@
 
 			<div class="down-content">
 				<div class="textalign">
-					<h4>NO ORDERS YET</h4>
-					<div class="ordernow">
-						<a href="" class="btn btn-ordernow">Order Now</a>
+					<div class="textalign">
+						<?php //Table for Orders?>
+							<table>
+								<tr>
+									<td>|Order ID</td><td>|Time</td><td>|Price</td>
+								</tr>
+								<?php foreach ($orders as $order): ?>
+									<?php if($order['order_status']==2): ?>
+									<tr>
+										<td>|<?php echo $order['order_id']?></td><td>|<?php echo $order['order_date']?></td><td>|<?php echo $order['order_price']?></td>
+									</tr>
+									<?php endif; ?>
+								<?php endforeach; ?>
+							</table>
 					</div>
 				</div>
 			</div>
