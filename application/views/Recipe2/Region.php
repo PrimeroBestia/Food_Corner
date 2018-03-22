@@ -17,7 +17,7 @@
 				<a href="<?php echo site_url('recipe/'.$recipe['r_id']);?>" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
 					<figure>
 						<br><br>
-						<img src="<?php echo base_url('assets/Recipe/photo/').$recipe['r_photo'];?>" alt = "<?php echo $recipe['r_name'];?>"/>
+						<img src="<?php echo base_url('assets/Recipe/photo/').$recipe['r_photo'];?>" alt = "<?php echo $recipe['r_name'];?>" height="228"/>
 						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 136.5 L 180 182 L 180 0 L 0 0 z "/></svg>
 						<figcaption>
 							<h2><?php echo $recipe['r_name'];?><br><br></h2>
