@@ -10,5 +10,5 @@
 		<?php endforeach;?>
 	</table>
 
-	<a>Checkout</a>
+	<a href = "<?php echo base_url('order/add_order/');?>">Checkout</a>
 </div>
