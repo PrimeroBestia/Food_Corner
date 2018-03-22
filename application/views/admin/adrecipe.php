@@ -97,14 +97,47 @@
                     <h4>Recipe Instruction</h4>
                     <textarea rows="10" cols="100" name="repinst" required></textarea>
                     <h4>Ingredients</h4>
-                    <small> How many ingredients needed? </small>
                     <br>
-                    <input id="numing" type="number" name="quantity" min="1" required>
-                    <input type="button" value="Add Ingredients">
-                    <!--<select name="ingred">
+                    <select name="ingred">
                       <option>--select ingredient--</option>
                       <option value="patola">PATOLA</option>
-                    </select>-->
+                    </select>
+                    <select name="ingred2">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select>
+                    <select name="ingred3">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select>
+                    <select name="ingred4">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select>
+                    <select name="ingred5">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select>
+                    <select name="ingred6">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select>
+                    <select name="ingred7">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select>
+                    <select name="ingred8">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select>
+                    <select name="ingred9">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select>
+                    <select name="ingred10">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select>
                   </form>
                 </div>
               </div>
@@ -118,7 +151,6 @@
     <footer id="footer">
       <p>Copyright &copy; 2018 Food Corner</p>
     </footer>
-
 
   <script>
      CKEDITOR.replace( 'editor1' );
