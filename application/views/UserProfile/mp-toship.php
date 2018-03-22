@@ -7,7 +7,6 @@
 
 	<div class="banner">
 			<div class="side">
-				<h3 class="displayname">username</h3>
 				<ul class="sidemenu">
 					<li><a href="<?php echo site_url('/ProfileView/');?>">My Account</a>
 							<ul>

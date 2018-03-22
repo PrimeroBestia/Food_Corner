@@ -24,7 +24,7 @@
 					<ul>
 						<li><a href="<?php echo site_url('/ProfileView/mp_topay');?>">TO PAY</a></li>
 						<li><a href="<?php echo site_url('/ProfileView/mp_toship');?>">TO SHIP</a></li>
-						<li><a href="<?php echo site_url('/ProfileView/mp_to_recieved');?>" class="torecieved">TO RECIEVE</a></li>
+						<li><a href="<?php echo site_url('/ProfileView/mp_to_recieved');?>" class="torecieved">TO RECEIVE</a></li>
 						<li><a href="<?php echo site_url('/ProfileView/mp_completed');?>">COMPLETED</a></li>
 						<li><a href="<?php echo site_url('/ProfileView/mp_cancelled');?>">CANCELLED</a></li>
 					</ul>
