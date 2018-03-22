@@ -31,10 +31,10 @@
                 <div id="main-nav" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="<?php echo base_url();?>">Home</a></li>
-                        <li><a href="<?php echo site_url('/RecipeBook/index');?>">Recipe Book</a></li>
-                        <li><a href="<?php echo site_url('/AboutUsView/index');?>">About Us</a></li>
-                        <li><a href="<?php echo site_url('/LoginView/index')?>" >Log in</a></li>
-                        <li><a href="<?php echo site_url('/SignupView/index')?>" >Sign up</a></li>
+                        <li><a href="<?php echo site_url('/RecipeBook');?>">Recipe Book</a></li>
+                        <li><a href="<?php echo site_url('/AboutUsView');?>">About Us</a></li>
+                        <li><a href="<?php echo site_url('/LoginView')?>" >Log in</a></li>
+                        <li><a href="<?php echo site_url('/SignupView')?>" >Sign up</a></li>
                     </ul>
                     
                 </div>
