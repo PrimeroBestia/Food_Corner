@@ -133,4 +133,14 @@ class customer_model extends CI_Model {
 		$this->db->where('c_id',$_SESSION['id']);
 		return $this->db->update('customer',$data);
 	}
+	public function update_users(){
+		$data =array(
+			'c_fname' => $this->input->post('fname'),
+			'c_mname' => $this->input->post('mname'),
+			'c_lname' => $this->input->post('lname'),
+			'c_pno' => $this->input->post('pno')
+		);
+		$this->db->where('c_id',$_SESSION['id']);
+		return $this->db->update('customer',$data);
+	}
 }

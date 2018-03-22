@@ -170,5 +170,8 @@ class ProfileView extends CI_Controller {
 		}
 	}
 
-
+	public function profile_update(){
+		$this->customer_model->update_users();
+		redirect(base_url('ProfileView/index'));
+	}
 }

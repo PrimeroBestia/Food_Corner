@@ -23,9 +23,9 @@
 						<?php echo validation_errors(); ?>
                         <?php echo form_open('profile/update/');?>
 						<form>
-		                   	<input id="namechange" name="fname" type="text" placeholder="First Name" required>
-		                   	<input id="namechange2" name="mname" type="text" placeholder="Middle Name" required>
-		                   	<input id="namechange3" name="lname" type="text" placeholder="Last Name" required>
+		                   	<input name="fname" type="text" placeholder="First Name" required>
+		                   	<input name="mname" type="text" placeholder="Middle Name" required>
+		                   	<input name="lname" type="text" placeholder="Last Name" required>
 		                    <div class="button-edit">
 			                	<button type="submit" class="btn-saveedit">Save</button>
 			             	</div>
@@ -51,7 +51,7 @@
 
                       		<tr>
                         		<td>Phone Number:</td>
-                        		<td><?php echo $user['c_fname'];?> </td>
+                        		<td><?php echo $user['c_pno'];?> </td>
                       		</tr>
                   		</table>
 

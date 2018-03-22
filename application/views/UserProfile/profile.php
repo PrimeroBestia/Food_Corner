@@ -31,14 +31,16 @@
 				<h4>My Profile</h4>
 				<p>Manage and Protect your account</p>
 				<div class="edit-profile">
-					<input type="text" placeholder="first name" required value="<?php echo $user['c_fname'];?>">
-					<input type="text" placeholder="middle name" required value="<?php echo $user['c_fname'];?>">
-                   	<input type="text" placeholder="last name" required value="<?php echo $user['c_fname'];?>">
-                   	<input type="text" placeholder="phone number" required value="<?php echo $user['c_fname'];?>">
-                    <div class="button-edit">
-						<a href="myaccount.html" class="btn-canceledit">Cancel</a>
-						<a href="" class="btn-saveedit">Save</a>
-					</div>
+                    <?php echo form_open('profileview/profile_update/');?>
+						<input type="text" name="fname" required value="<?php echo $user['c_fname'];?>">
+						<input type="text" name="mname" required value="<?php echo $user['c_mname'];?>">
+	                   	<input type="text"	name="lname" required value="<?php echo $user['c_lname'];?>">
+	                   	<input type="text" name="pno" required value="<?php echo $user['c_pno'];?>">
+	                    <div class="button-edit">
+							<a href="<?php echo base_url('ProfileView/');?>" class="btn-canceledit">Cancel</a>
+							<button class="btn-saveedit">Save</button>
+						</div>
+					</form>
                 </div>
 			</div>
 		</div>
