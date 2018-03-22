@@ -55,4 +55,20 @@ class cart_model extends CI_Model {
 			return false;
 		}
 	}
+
+	public function delete_cart($id){
+		$this->db->where('c_id',$id);
+		return $result = $this->db->delete('my_cart');
+	}
+
+	public function empty_cart(){
+		$this->db->where('c_id', $_SESSION['id']);
+		$result = $this->db->get('my_cart');
+		if($result->num_rows()==0){
+    		return true;
+		}
+		else{
+			return false;
+		}
+	}
 }
