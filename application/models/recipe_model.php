@@ -46,7 +46,7 @@ class recipe_model extends CI_Model {
     }
     public function get_recipe($id){
     	$this->db->select('*');
-    	$this->db->where('recipe.r_id_region',$id);    
+    	$this->db->where('recipe.r_id',$id);    
 		$this->db->from('recipe');
 		$this->db->join('region', 'recipe.r_id_region = region.region_id');
 		$result = $this->db->get();
