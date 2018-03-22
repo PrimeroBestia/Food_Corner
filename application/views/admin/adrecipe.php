@@ -79,7 +79,18 @@
               </div>
               <div class="panel-body">
                 <div class=padd>
-                  
+                  <form action="" id="repform">
+                    <h3>Recipe Title</h3>
+                    <input type="text" name="reptitle" size="25" required>
+                    <br>
+                    <br>
+                    <h4>Recipe Description</h4>
+                    <textarea rows="10" cols="100" name="repdesc"></textarea>
+                    <br>
+                    <h4>Recipe Instruction</h4>
+                    <textarea rows="10" cols="100" name="repinst"></textarea>
+                    
+                  </form>
                 </div>
               </div>
               </div>
