@@ -6,26 +6,19 @@
 body
 {	
 	font-family: tahoma;
+	background-color: #F5F5F5;
+	margin-left: 100px;
+	margin-right: 150px;
 }
 h3, h5
 {
-	color:black;
+	color: black;
 	position: center;
-}
-.banner
-{
-	height: 700px;
-	background-color: #F5F5F5;
 }
 .banner h3
 {
-	color:black;
+	color: black;
 	margin-top: 5px;
-}
-.side
-{
-	margin-left: 100px;'
-	
 }
 .displayname
 {
@@ -77,14 +70,10 @@ h3, h5
 	background:#222;
 	border-left: 4px solid #FF9933;
 }
-
-
-
 .content
 {
 	background-color: white;
 	float: right;
-	margin-right: 150px;
 	margin-left: 10px;
 	height: 530px;
 	width: 830px; 
@@ -156,8 +145,8 @@ h3, h5
 	top: 35%;
 	transform: translateY(-50%);
 	width: 400px;
+	margin-top: 5px;
 }
-
 .edit-profile input 
 {
 	margin-top: 5px;
@@ -215,15 +204,6 @@ h3, h5
 	color: black;
 	transition: all 0.5 ease-in;
 }
-
-
-
-
-
-
-
-
-
 .btn-newbank
 {
 	border: 3px solid #FF9933;
@@ -243,11 +223,6 @@ h3, h5
 {
 	margin-top: 20px;
 }
-
-
-
-
-
 
 .btn-newaddress
 {
@@ -297,22 +272,10 @@ h3, h5
 	border-color: #FF9933;
 	box-shadow: 0 0 8px 0 #FF9933;
 }
-
-
-
-
-
-
-
-
-
-
-
 .up-content
 {
 	background-color: white;
 	float: right;
-	margin-right: 150px;
 	margin-left: 10px;
 	height: 60px;
 	width: 830px; 
