@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2018 at 10:15 PM
+-- Generation Time: Mar 22, 2018 at 02:19 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -82,14 +82,23 @@ INSERT INTO `customer_address` (`caddress_id`, `address`, `c_id`, `address_id`) 
 
 CREATE TABLE `customer_order` (
   `order_id` int(11) NOT NULL,
-  `order_date` date NOT NULL,
+  `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `order_price` varchar(60) NOT NULL,
-  `order_comment` varchar(255) NOT NULL,
+  `order_comment` text NOT NULL,
   `order_status` varchar(60) NOT NULL,
   `order_list_id` int(11) NOT NULL,
   `c_id` int(11) NOT NULL,
-  `payment_id` int(11) NOT NULL
+  `payment_id` int(11) NOT NULL,
+  `address_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer_order`
+--
+
+INSERT INTO `customer_order` (`order_id`, `order_date`, `order_price`, `order_comment`, `order_status`, `order_list_id`, `c_id`, `payment_id`, `address_id`) VALUES
+(10, '2018-03-22 08:08:55', '', '', 'Delivering', 10, 26, 0, 0),
+(9, '2018-03-22 08:07:13', '', '', 'Delivering', 9, 26, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -163,13 +172,6 @@ CREATE TABLE `my_cart` (
   `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `my_cart`
---
-
-INSERT INTO `my_cart` (`c_id`, `r_id`, `amount`, `price`) VALUES
-('26', 1, 4, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -193,6 +195,17 @@ CREATE TABLE `order_list` (
   `r_id` int(11) NOT NULL,
   `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `order_list`
+--
+
+INSERT INTO `order_list` (`list_id`, `r_id`, `price`) VALUES
+(5, 1, 0),
+(6, 1, 0),
+(8, 1, 0),
+(9, 1, 0),
+(10, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -348,7 +361,7 @@ ALTER TABLE `customer_address`
 -- AUTO_INCREMENT for table `customer_order`
 --
 ALTER TABLE `customer_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `recipe`
