@@ -79,13 +79,16 @@
               <div class="panel-body">
                 <br>
                 <table class="table table-striped table-hover">
+                    <thead>  
                       <tr>
                         <th>Name</th>
                         <th>Email</th>
                         <th></th>
                         <th></th>
                       </tr>
-                    </table>
+                    </thead>
+                    
+                </table>
               </div>
               </div>
 
