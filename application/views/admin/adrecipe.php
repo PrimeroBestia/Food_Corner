@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Area | Recipe</title>
+    <title>Admin Area | Add Recipe</title>
     <!-- Bootstrap core CSS -->
     <link href="http://localhost/Food_Corner/assets/Admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://localhost/Food_Corner/assets/Admin/css/style.css" rel="stylesheet">
@@ -52,7 +52,7 @@
       <div class="container">
         <ol class="breadcrumb">
           <li><a>Dashboard</a></li>
-          <li class="active">Recipe</li>
+          <li class="active">Add Recipe</li>
         </ol>
       </div>
     </section>
@@ -75,13 +75,71 @@
             <!-- Website Overview -->
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">Recipe</h3>
+                <h3 class="panel-title">Add Recipe</h3>
               </div>
               <div class="panel-body">
                 <div class=padd>
-                  <h2>Welcome to Recipe</h2>
-                  <br>
-                  <a class="giff" href="<?php echo base_url('/AdminView/addrecipe');?>"><h4>Add Recipe</h4></button>
+                  <form action="" id="repform">
+                    <h3>Recipe Title</h3>
+                    <input type="text" name="reptitle" size="25" required>
+                    <br>
+                    <br>
+                    <h4>Region</h4>
+                    <select name="region">
+                      <option value="Eastern">Eastern</option>
+                      <option value="Western">Western</option>
+                    </select>
+                    <br>
+                    <br>
+                    <h4>Recipe Description</h4>
+                    <textarea rows="10" cols="100" name="repdesc" required></textarea>
+                    <br>
+                    <h4>Recipe Instruction</h4>
+                    <textarea rows="10" cols="100" name="repinst" required></textarea>
+                    <h4>Ingredients</h4>
+                    <br>
+                    <select name="ingred">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select><br><br>
+                    <select name="ingred2">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select><br><br>
+                    <select name="ingred3">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select><br><br>
+                    <select name="ingred4">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select><br><br>
+                    <select name="ingred5">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select><br><br>
+                    <select name="ingred6">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select><br><br>
+                    <select name="ingred7">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select><br><br>
+                    <select name="ingred8">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select><br><br>
+                    <select name="ingred9">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select><br><br>
+                    <select name="ingred10">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select><br><br>
+                    <input type="submit" value="ADD RECIPE">
+                  </form>
                 </div>
               </div>
               </div>
@@ -94,7 +152,6 @@
     <footer id="footer">
       <p>Copyright &copy; 2018 Food Corner</p>
     </footer>
-
 
   <script>
      CKEDITOR.replace( 'editor1' );

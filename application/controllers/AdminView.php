@@ -22,4 +22,8 @@ class AdminView extends CI_Controller {
 	public function users(){
 		$this->load->view('admin/users');
 	}
+
+	public function addrecipe(){
+		$this->load->view('admin/adrecipe');
+	}
 }

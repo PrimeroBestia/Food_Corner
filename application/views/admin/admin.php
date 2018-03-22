@@ -29,7 +29,6 @@
             <li><a href="<?php echo site_url('/AdminView/delivery');?>">Delivery</a></li>
             <li><a href="<?php echo site_url('/AdminView/recipe');?>">Recipe</a></li>
             <li><a href="<?php echo site_url('/AdminView/users');?>">Users</a></li>
-            <li><a href="">Region</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a>Welcome Admin</a></li>
@@ -67,7 +66,6 @@
               <a href="<?php echo site_url('/AdminView/delivery');?>" class="list-group-item"> Delivery </a>
               <a href="<?php echo site_url('/AdminView/recipe');?>" class="list-group-item"> Recipe </a>
               <a href="<?php echo site_url('/AdminView/users');?>" class="list-group-item"> Users </a>
-              <a href="" class="list-group-item">Region</a>
             </div>
           </div>
           <div class="col-md-9">
@@ -112,7 +110,7 @@
               <!-- Latest Users -->
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Latest Users</h3>
+                  <h3 class="panel-title">Graph</h3>
                 </div>
                 <div class="panel-body">
                   
