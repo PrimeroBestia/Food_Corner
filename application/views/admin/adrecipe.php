@@ -84,12 +84,27 @@
                     <input type="text" name="reptitle" size="25" required>
                     <br>
                     <br>
+                    <h4>Region</h4>
+                    <select name="region">
+                      <option value="Eastern">Eastern</option>
+                      <option value="Western">Western</option>
+                    </select>
+                    <br>
+                    <br>
                     <h4>Recipe Description</h4>
-                    <textarea rows="10" cols="100" name="repdesc"></textarea>
+                    <textarea rows="10" cols="100" name="repdesc" required></textarea>
                     <br>
                     <h4>Recipe Instruction</h4>
-                    <textarea rows="10" cols="100" name="repinst"></textarea>
-                    
+                    <textarea rows="10" cols="100" name="repinst" required></textarea>
+                    <h4>Ingredients</h4>
+                    <small> How many ingredients needed? </small>
+                    <br>
+                    <input id="numing" type="number" name="quantity" min="1" required>
+                    <input type="button" value="Add Ingredients">
+                    <!--<select name="ingred">
+                      <option>--select ingredient--</option>
+                      <option value="patola">PATOLA</option>
+                    </select>-->
                   </form>
                 </div>
               </div>
