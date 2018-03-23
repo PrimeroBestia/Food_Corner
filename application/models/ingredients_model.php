@@ -18,6 +18,13 @@ class ingredients_model extends CI_Model {
 		$query=$this->db->get();
 		return $query->result_array();
 	}
+	public function add_ingredients(){
+		$data = array(
+			'ing_name' => $this->input->post('ing_name'),
+			'ing_unit' => $this->input->post('ing_unit')
+		);
+		return $this->db->insert('ingredients',$data);
+	}
 	public function update_ingredients($suppliers){
 		$query=$this->db->query("UPDATE ing_id FROM ingredients where s_id = ".$suppliers);
 		if($query->num_row()>0){
@@ -34,6 +41,10 @@ class ingredients_model extends CI_Model {
 		else{
 			return 1;
 		}
+	}
+	public function get_ingredients(){
+		$result=  $this->db->get('ingredients');
+		return $result->result_array();
 	}
 
 }

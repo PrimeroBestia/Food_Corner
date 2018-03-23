@@ -78,6 +78,15 @@ class customer_model extends CI_Model {
 		$query=$this->db->get_where('customer',array('c_id'=>$_SESSION['id']));
 		return $query->row_array(0);
 	}
+	public function is_admin(){
+		$query=$this->db->get_where('customer',array('c_id'=>$_SESSION['id']));
+		if($query->row_array(0)['acc_type']=="admin"){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 	public function check_email_exists($email){
 		$query=$this->db->get_where('customer',array('c_email'=>$email));
 		if(empty($query->row_array())){

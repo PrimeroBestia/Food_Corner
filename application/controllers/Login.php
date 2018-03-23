@@ -17,11 +17,12 @@ class Login extends CI_Controller {
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
 			if($this->customer_model->check_account($password,$email)){
-			session_start();
-			$_SESSION['email'] = $this->input->post('email');
-			$_SESSION['id'] = $this->customer_model->get_cid($_SESSION['email']);
-			$_SESSION['alert'] = "You have Successfully been Logged In.";
-			redirect('Welcome');
+				session_start();
+				$_SESSION['email'] = $this->input->post('email');
+				$_SESSION['id'] = $this->customer_model->get_cid($_SESSION['email']);
+				$_SESSION['alert'] = "You have Successfully been Logged In.";
+				$_SESSION['admin'] = $this->customer_model->is_admin();
+				redirect('Welcome');
 			}
 			else{
 				$this->session->set_flashdata('wrong','You have entered an invalid Username/Email or Password');

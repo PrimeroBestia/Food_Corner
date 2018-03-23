@@ -52,7 +52,7 @@
       <div class="container">
         <ol class="breadcrumb">
           <li><a>Dashboard</a></li>
-          <li class="active">Add Recipe</li>
+          <li class="active">Add Region</li>
         </ol>
       </div>
     </section>
@@ -75,59 +75,16 @@
             <!-- Website Overview -->
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">Add Recipe</h3>
+                <h3 class="panel-title">Add Region</h3>
+                <?php echo form_open('AdminView/add_regions');?>
+                    <h4>Region:</h4><br>
+                    <input name = "region_name" required><br>
+                    <h4>Region Description:</h4><br>
+                    <input type = "textarea" name = "region_desc" required><br>
+                    <button class="giff" type = "submit">Add Region</button>
+                </form>
               </div>
-              <div class="panel-body">
-                <div class=padd>
-                  <?php echo form_open('AdminView/add_recipes')?>
-                    <h3>Recipe Title</h3>
-                    <input type="text" name="recipe_title" size="25" required>
-                    <br>
-                    <br>
-                    <h4>Region</h4>
-                    <select name="region">
-                      <?php foreach($regions as $region):?>
-                      <option value="<?php echo $region['region_id']?>"><?php echo $region['region_name']?></option>
-                      <?php endforeach;?>
-                    </select>
-                    <h3>Recipe Country</h3>
-                     <input type="text" name="recipe_country" min = "0" required>
-                    <br>
-                    <h3>Recipe Type</h3>
-                     <input type="text" name="recipe_type" min = "0" required>
-                    <br>
-                    <br>
-                    <h3>Cook Time</h3>
-                      <input type="number" name="recipe_time" min = "0" required>
-                    <br>
-                    <br>
-                    <h3>Serving</h3>
-                      <input type="number" name="recipe_serve" min = "0" required>
-                    <br>
-                    <br>
-                    <h3>Price</h3>
-                      <input type="number" name="recipe_price" min = "0" required>
-                    <br>
-                    <br>
-                    <h4>Recipe Description</h4>
-                      <textarea rows="10" cols="100" name="recipe_desc" required></textarea>
-                    <br>
-                    <h4>Recipe Instruction</h4>
-                      <textarea rows="10" cols="100" name="recipe_inst" required></textarea>
-                    <?php for($i=1;$i<=$count;$i=$i+1){?>
-                    <h4>Ingredients<?php echo $i;?></h4>
-                    <br>
-                    Amount: <input type="number" name="ing_amount[]" min = "1" value="1" required>
-                    <select name="ingred[]" required>
-                      <?php foreach($ingredients as $ingredient): ?>
-                        <option value = "<?php echo $ingredient['ing_id'];?>"><?php echo $ingredient['ing_unit']."  |";echo $ingredient['ing_name'];?></option>
-                      <?php endforeach; ?>
-                    </select><br><br>
-                    <?php }?>
-                    <button type="submit">Add Recipe</button>
-                  </form>
-                </div>
-              </div>
+
               </div>
 
           </div>

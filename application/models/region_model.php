@@ -8,6 +8,8 @@ class region_model extends CI_Model {
 
 	public function add_region(){
 		$data = array(
+			'region_name' => $this->input->post('region_name'),
+			'region_description' => $this->input->post('region_desc')
 		);
 		return $this->db->insert('region',$data);
 	}

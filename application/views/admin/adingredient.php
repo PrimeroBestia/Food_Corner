@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Area | Add Recipe</title>
+    <title>Admin Area | Add Ingredient</title>
     <!-- Bootstrap core CSS -->
     <link href="http://localhost/Food_Corner/assets/Admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://localhost/Food_Corner/assets/Admin/css/style.css" rel="stylesheet">
@@ -42,7 +42,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10">
-            <h1>Recipe</h1>
+            <h1>Add Ingredient</h1>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
       <div class="container">
         <ol class="breadcrumb">
           <li><a>Dashboard</a></li>
-          <li class="active">Add Recipe</li>
+          <li class="active">Add Ingredient</li>
         </ol>
       </div>
     </section>
@@ -75,58 +75,14 @@
             <!-- Website Overview -->
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h3 class="panel-title">Add Recipe</h3>
-              </div>
-              <div class="panel-body">
-                <div class=padd>
-                  <?php echo form_open('AdminView/add_recipes')?>
-                    <h3>Recipe Title</h3>
-                    <input type="text" name="recipe_title" size="25" required>
-                    <br>
-                    <br>
-                    <h4>Region</h4>
-                    <select name="region">
-                      <?php foreach($regions as $region):?>
-                      <option value="<?php echo $region['region_id']?>"><?php echo $region['region_name']?></option>
-                      <?php endforeach;?>
-                    </select>
-                    <h3>Recipe Country</h3>
-                     <input type="text" name="recipe_country" min = "0" required>
-                    <br>
-                    <h3>Recipe Type</h3>
-                     <input type="text" name="recipe_type" min = "0" required>
-                    <br>
-                    <br>
-                    <h3>Cook Time</h3>
-                      <input type="number" name="recipe_time" min = "0" required>
-                    <br>
-                    <br>
-                    <h3>Serving</h3>
-                      <input type="number" name="recipe_serve" min = "0" required>
-                    <br>
-                    <br>
-                    <h3>Price</h3>
-                      <input type="number" name="recipe_price" min = "0" required>
-                    <br>
-                    <br>
-                    <h4>Recipe Description</h4>
-                      <textarea rows="10" cols="100" name="recipe_desc" required></textarea>
-                    <br>
-                    <h4>Recipe Instruction</h4>
-                      <textarea rows="10" cols="100" name="recipe_inst" required></textarea>
-                    <?php for($i=1;$i<=$count;$i=$i+1){?>
-                    <h4>Ingredients<?php echo $i;?></h4>
-                    <br>
-                    Amount: <input type="number" name="ing_amount[]" min = "1" value="1" required>
-                    <select name="ingred[]" required>
-                      <?php foreach($ingredients as $ingredient): ?>
-                        <option value = "<?php echo $ingredient['ing_id'];?>"><?php echo $ingredient['ing_unit']."  |";echo $ingredient['ing_name'];?></option>
-                      <?php endforeach; ?>
-                    </select><br><br>
-                    <?php }?>
-                    <button type="submit">Add Recipe</button>
-                  </form>
-                </div>
+                <h3 class="panel-title">Add Ingredient</h3>
+                <?php echo form_open('AdminView/add_ingredients');?>
+                    <h4>Ingredient:</h4><br>
+                    <input type = "text" name = "ing_name" required><br>
+                    <h4>Ingredient Unit:</h4><br>
+                    <input type="text" name = "ing_unit" required><br>
+                  <button class="giff" type = "submit"><h4>Add Ingredients</h4></button>
+                </form>
               </div>
               </div>
 

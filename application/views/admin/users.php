@@ -87,7 +87,22 @@
                         <th></th>
                       </tr>
                     </thead>
-                    
+                    <tbody>
+                      <?php
+                        if(isset($user)){
+                          foreach($user as $use){
+                            echo '
+                              <tr>
+                                <td>'.$use['c_id'].'</td>
+                                <td>'.$use['c_email'].'</td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            ';
+                          }
+                        }
+                      ?>
+                    </tbody>
                 </table>
               </div>
               </div>

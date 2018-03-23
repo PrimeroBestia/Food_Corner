@@ -81,7 +81,17 @@
                 <div class=padd>
                   <h2>Welcome to Recipe</h2>
                   <br>
-                  <a class="giff" href="<?php echo base_url('/AdminView/addrecipe');?>"><h4>Add Recipe</h4></button>
+                  <?php echo form_open('AdminView/add_recipe');?>
+                    <p></p>
+                    Amount of Ingredients: <input type = "number" name = "count" min = "1" value="1">
+                    <button class="giff" type = "submit"><h4>Add Recipe</h4></button>
+                  </form>
+                  <?php echo form_open('AdminView/add_ingredient');?>
+                    <button class="giff" type = "submit"><h4>Add Ingredients</h4></button>
+                  </form>
+                  <?php echo form_open('AdminView/add_region');?>
+                    <button class="giff" type = "submit"><h4>Add Region</h4></button>
+                  </form>
                 </div>
               </div>
               </div>
