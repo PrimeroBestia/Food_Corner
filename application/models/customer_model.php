@@ -78,6 +78,10 @@ class customer_model extends CI_Model {
 		$query=$this->db->get_where('customer',array('c_id'=>$_SESSION['id']));
 		return $query->row_array(0);
 	}
+	public function get_address(){
+		$query=$this->db->get_where('customer_address',array('c_id'=>$_SESSION['id']));
+		return $query->result_array();
+	}
 	public function is_admin(){
 		$query=$this->db->get_where('customer',array('c_id'=>$_SESSION['id']));
 		if($query->row_array(0)['acc_type']=="admin"){
@@ -131,6 +135,31 @@ class customer_model extends CI_Model {
 		}
 		else{
 			return false;
+		}
+	}
+	public function update_pass(){
+		$this->db->where('c_id',$_SESSION['id']);
+		$res=$this->db->get('customer');
+		$result= $res->row_array(0)['c_pass'];
+		$enc_pass=md5($this->input->post('pass'));
+		$pass1=md5($this->input->post('npass'));
+		$pass2=md5($this->input->post('cpass'));
+		if($enc_pass==$result){
+			if($pass1==$pass2){
+				$data = array('c_pass'=>$pass1);
+				$this->db->where('c_id',$_SESSION['id']);
+				$this->db->update('customer',$data);
+				$_SESSION['alert']="Password Updated";
+				redirect(base_url('ProfileView/changepw'));
+			}
+			else{
+				$_SESSION['alerts']="Password Mismatch";
+				redirect(base_url('ProfileView/changepw'));
+			}
+		}
+		else{
+			$_SESSION['alerts']="Incorrect Password";
+			redirect(base_url('ProfileView/changepw'));
 		}
 	}
 	public function update_user(){

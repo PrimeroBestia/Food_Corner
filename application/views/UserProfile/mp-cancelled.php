@@ -32,10 +32,16 @@
 			<div class="down-content">
 				<div class="textalign">
 					<div class="textalign">
-						<?php //Table for Orders?>
-							<table>
+						<?php if(empty($orders)):?>
+							<h4>NO ORDERS YET</h4>
+							<div class="ordernow">
+								<a href="<?php echo base_url('RecipeBook');?>" class="btn btn-ordernow">Order Now</a>
+							</div>
+						<?php else:?>
+							<?php //Table for Orders?>
+							<table class="table-info">
 								<tr>
-									<td>|Order ID</td><td>|Time</td><td>|Price</td>
+									<td><h4>Order ID</h4></td><td><h4>Time</h4></td><td><h4>Price</h4></td>
 								</tr>
 								<?php foreach ($orders as $order): ?>
 									<?php if($order['order_status']==2): ?>
@@ -45,6 +51,7 @@
 									<?php endif; ?>
 								<?php endforeach; ?>
 							</table>
+						<?php endif;?>
 					</div>
 				</div>
 			</div>

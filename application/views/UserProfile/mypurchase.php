@@ -36,9 +36,10 @@
 							</div>
 						<?php else:?>
 							<?php //Table for Orders?>
-							<table>
+							<div>
+							<table class="table-info">
 								<tr>
-									<td>|Order ID</td><td>|Time</td><td>|Price</td><td>|Status</td>
+									<td><h4>Order ID</h4></td><td><h4>Time</h4></td><td><h4>Price</h4></td><td><h4>Status</h4></td>
 								</tr>
 								<?php foreach ($orders as $order): ?>
 									<?php if(true): ?>
@@ -63,6 +64,7 @@
 									<?php endif; ?>
 								<?php endforeach; ?>
 							</table>
+						</div>
 						<?php endif;?>
 					</div>
 				</div>

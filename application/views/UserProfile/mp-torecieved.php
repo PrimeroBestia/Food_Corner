@@ -37,9 +37,9 @@
 							</div>
 						<?php else:?>
 							<?php //Table for Orders?>
-							<table>
+							<table class="table-info">
 								<tr>
-									<td>|Order ID</td><td>|Time</td><td>|Price</td>
+									<td><h4>Order ID</h4></td><td><h4>Time</h4></td><td><h4>Price</h4></td>
 								</tr>
 								<?php foreach ($orders as $order): ?>
 									<?php if($order['order_status']==0): ?>
