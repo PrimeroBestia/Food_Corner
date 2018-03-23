@@ -16,7 +16,7 @@
                             <?php echo validation_errors(); ?>
                             <?php echo form_open('login/logins');?>
                                 <p>
-                                    <label for="email" class="mail" data-icon="u" >E-mail </label>
+                                    <label for="email" class="mail" data-icon="e" >E-Mail </label>
                                     <input id="email" name="email" type="email" required placeholder="john@mail.com"/>
                                 </p>
                                 <p>

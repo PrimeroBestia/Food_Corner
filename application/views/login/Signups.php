@@ -16,7 +16,7 @@
                                     <input id="usernamesignup" name="username"  type="text" placeholder="Username" />
                                 </p>-->
                                 <p>
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Email</label>
+                                    <label for="emailsignup" class="youmail" data-icon="e" > E-Mail</label>
                                     <input id="emailsignup" name="email"  type="email" placeholder="john@mail.com" required>
                                 </p>
                                 <p>
@@ -24,7 +24,7 @@
                                     <input id="passwordsignup" name="password"  type="password" placeholder="*********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                                 </p>
                                 <p>
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Confirm Password </label>
                                     <input id="passwordsignup_confirm" name="cpassword"  type="password" placeholder="*********" required>
                                 </p>
                                 <p>
