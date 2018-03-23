@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="aboutus-item">
-                        <img src="img/bg1L.jpg" alt="">
+                        <img src="<?php echo base_url('assets/AboutUs/img/bg1L.jpg');?>" style="width: 100%" alt="">
                         <div class="date">13 Jan 2018</div>
                         <div class="down-content">
                             <h4>Food Corner</h4>
