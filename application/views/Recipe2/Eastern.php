@@ -52,7 +52,10 @@
 							path.animate( { 'path' : pathConfig.from }, speed, easing );
 						} );
 					} );
-				}
+				}<br /><br />
+<br />
+<br />
+
 
 				init();
 
