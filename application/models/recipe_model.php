@@ -14,7 +14,6 @@ class recipe_model extends CI_Model {
 	}
 
 	public function read_order_spec($rec){
-
 		$this->db->select('*');
 		$this->db->from('recipe');
 		$this->db->where('r_id', $rec);
@@ -38,15 +37,15 @@ class recipe_model extends CI_Model {
     }
     public function add_recipes(){
     	$data = array(
-    		'r_name'=>$this->input->post('$recipe_title'),
-    		'r_type'=>$this->input->post('$recipe_type'),
-    		'r_id_region'=>$this->input->post('$region'),
-    		'r_country'=>$this->input->post('$recipe_country'),
-    		'recipe_text'=>$this->input->post('$recipe_inst'),
-    		'r_description'=>$this->input->post('$recipe_desc'),
-    		'r_price'=>$this->input->post('$recipe_price'),
-    		'r_time'=>$this->input->post('$recipe_time'),
-    		'r_serve'=>$this->input->post('$recipe_serve'),
+    		'r_name'=>$this->input->post('recipe_title'),
+    		'r_type'=>$this->input->post('recipe_type'),
+    		'r_id_region'=>$this->input->post('region'),
+    		'r_country'=>$this->input->post('recipe_country'),
+    		'recipe_text'=>$this->input->post('recipe_inst'),
+    		'r_description'=>$this->input->post('recipe_desc'),
+    		'r_price'=>$this->input->post('recipe_price'),
+    		'r_time'=>$this->input->post('recipe_time'),
+    		'r_serve'=>$this->input->post('recipe_serve')
     	);
     	$this->db->insert('recipe',$data);
     	$rid=$this->recipe_model->get_recipe_id();

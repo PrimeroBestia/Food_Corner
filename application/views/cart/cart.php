@@ -44,6 +44,11 @@
 	<?php echo form_open('Order/add_order');?>
 		<input type = hidden name = "price" value="<?php echo $total;?>">
 		<table>
+			<select name ="address_id" style="margin-right: 50px; margin-top: 50px; margin-left: -50px;" required>
+				<?php foreach($addresses as $address):?>
+					<option value="<?php echo $address['address_id']?>"><?php echo $address['address']?></option>
+				<?php endforeach;?>
+			</select>
 			<tr class="row totals">
 				<td class="order"><button type="submit" class="btn">CHECKOUT</button></td>	
 			</tr>

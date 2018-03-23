@@ -28,8 +28,9 @@ class AddCart extends CI_Controller {
 	}
 	public function view()
 	{
-		$data['carts'] = $this->cart_model->get_cart($_SESSION['id']);
 		if(isset($_SESSION['email'])){
+		$data['carts'] = $this->cart_model->get_cart($_SESSION['id']);
+		$data['addresses'] = $this->customer_model->get_address();
 			$this->load->view('template/headerlogin');
 			$this->load->view('cart/cart',$data);
 			$this->load->view('template/footer');

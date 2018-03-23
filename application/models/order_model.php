@@ -7,7 +7,9 @@ class order_model extends CI_Model {
 	public function add_order(){
 		$data = array(
 			'c_id' => $_SESSION['id'],
-			'order_status' => "Delivering"
+			'order_status' => "Delivering",
+			'address_id' => $this->input->post('address_id'),
+			'order_price' => $this->input->post('price')
 		);
 		$this->db->insert('customer_order',$data);
 		$result = $this->order_model->get_order();
