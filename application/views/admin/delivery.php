@@ -79,18 +79,20 @@
                 <table class="table table-striped table-hover">
                     <thead>  
                       <tr>
-                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Order ID</th>
                         <th>Address</th>
-                        <th></th>
                         <th>Status</th>
                       </tr>
                     </thead>
+                      <?php foreach($orders as $num => $order):?>
                       <tr>
-                        <td><!--input name--></td>
-                        <td><!--input address--></td>
-                        <td></td>
-                        <td><!--input status--></td>
+                        <td><?php echo $order['c_email'];?></td>
+                        <td><?php echo $order['order_id'];?></td>
+                        <td><?php echo $order['address'];?></td>
+                        <td><?php echo $order['order_status'];?></td>
                       </tr>
+                      <?php endforeach;?>
                   </table>
 
                 </div> 

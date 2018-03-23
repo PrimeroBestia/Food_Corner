@@ -2,7 +2,6 @@
 <html lang="en" class="demo-3 no-js">
 	<head>
 	</head>
-	<body>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 	
@@ -56,6 +55,7 @@
 				init();
 
 			})();
+
 		</script>
 	</body>
 </html>

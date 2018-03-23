@@ -41,4 +41,13 @@ class order_model extends CI_Model {
 		$result = $this->db->get('customer_order');
 		return $result->result_array();
 	}
+	public function get_all_orders(){
+		$this->db->select('*');  
+		$this->db->from('customer_order');
+		$this->db->join('customer','customer.c_id = customer_order.c_id');
+		$this->db->join('customer_address','customer.c_address_id = customer_address.caddress_id');
+		$this->db->order_by('order_date','DESC');
+		$result = $this->db->get();
+		return $result->result_array();
+	}
 }
