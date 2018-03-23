@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2018 at 06:41 AM
+-- Generation Time: Mar 23, 2018 at 07:28 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -99,9 +99,7 @@ CREATE TABLE `customer_order` (
 --
 
 INSERT INTO `customer_order` (`order_id`, `order_date`, `order_price`, `order_comment`, `order_status`, `order_list_id`, `c_id`, `payment_id`, `address_id`) VALUES
-(10, '2018-03-22 08:08:55', '', '', 'Delivering', 10, 26, 0, 0),
-(9, '2018-03-22 08:07:13', '', '', 'Delivering', 9, 26, 0, 0),
-(11, '2018-03-22 13:40:08', '', '', 'Delivering', 11, 27, 0, 0);
+(13, '2018-03-23 06:00:35', '0', '', 'Delivering', 13, 26, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -138,7 +136,9 @@ CREATE TABLE `ingredients` (
 INSERT INTO `ingredients` (`ing_id`, `s_id`, `ing_name`, `ing_quantity`, `ing_unit`, `ing_price`) VALUES
 (1, 1, 'Tomato', '34', 'kg', '6'),
 (2, 1, 'Potato', '34', 'kg', '6'),
-(3, 0, 'Patatas', '', 'kg', '');
+(3, 0, 'Patatas', '', 'kg', ''),
+(4, 0, 'Parmesan', '', 'gram/s', ''),
+(5, 0, 'Water', '', 'ml/s', '');
 
 -- --------------------------------------------------------
 
@@ -149,7 +149,7 @@ INSERT INTO `ingredients` (`ing_id`, `s_id`, `ing_name`, `ing_quantity`, `ing_un
 CREATE TABLE `ingridients_list` (
   `ing_list_id` int(11) NOT NULL,
   `ing_id` int(11) NOT NULL,
-  `amount` int(11) NOT NULL
+  `amount` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -161,7 +161,8 @@ INSERT INTO `ingridients_list` (`ing_list_id`, `ing_id`, `amount`) VALUES
 (2, 2, 2),
 (1, 1, 2),
 (1, 2, 2),
-(3, 2, 3);
+(3, 2, 3),
+(30, 5, 1000);
 
 -- --------------------------------------------------------
 
@@ -175,6 +176,13 @@ CREATE TABLE `my_cart` (
   `amount` int(11) NOT NULL,
   `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `my_cart`
+--
+
+INSERT INTO `my_cart` (`c_id`, `r_id`, `amount`, `price`) VALUES
+('26', 30, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -205,12 +213,7 @@ CREATE TABLE `order_list` (
 --
 
 INSERT INTO `order_list` (`list_id`, `r_id`, `price`) VALUES
-(5, 1, 0),
-(6, 1, 0),
-(8, 1, 0),
-(9, 1, 0),
-(10, 1, 0),
-(11, 1, 0);
+(13, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -226,7 +229,7 @@ CREATE TABLE `recipe` (
   `r_time_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `r_id_region` varchar(60) NOT NULL,
   `r_country` varchar(60) NOT NULL,
-  `r_photo` varchar(255) NOT NULL,
+  `r_photo` varchar(255) NOT NULL DEFAULT '0.jpeg',
   `recipe_text` text NOT NULL,
   `r_description` text NOT NULL,
   `r_price` int(11) NOT NULL,
@@ -265,7 +268,8 @@ INSERT INTO `recipe` (`r_id`, `ing_list_id`, `r_name`, `r_type`, `r_time_created
 (26, 26, 'Tonkatsu', 'Main', '2018-03-22 14:43:13', '2', 'Japan', '111.jpg', '1. Gather all the ingredients.\r\n2. Adjust an oven rack to the middle position and preheat the oven to 400F (200C). Line a rimmed baking sheet with parchment paper.\r\n3. Combine the panko and oil in a frying pan and toast over medium heat until golden brown. Transfer panko into a shallow dish and allow to cool.\r\n. Get rid of the extra fat and make a couple of slits on the connective tissue between the meat and fat. The reason why you do this is that red meat and fat have different elasticity, and when they are cooked they will shrink and expand at different rates. This will allow Tonkatsu to stay nice and flat and prevent Tonkatsu from curling up.\r\n5. Pound the meat with a meat pounder, or if you don’t have one then just use the back of knife to pound. Mold the extended meat back into original shape with your hands. \r\n6. Sprinkle salt and freshly ground black pepper. \r\n7. Dredge each pork piece in the flour to coat completely and pat off the excess flour. Then dip into the beaten egg and finally coat with the toasted panko. Press on the panko flakes to make sure they adhere to the pork. \r\n8. Place the pork on the prepared baking sheet or even better if you have an oven-safe wire rack (as air goes through on the bottom so panko won\'t get crushed). Bake until the pork is no longer pink inside, about 20 minutes. \r\n>9. Place the pork on the prepared baking sheet or even better if you have an oven-safe wire rack (as air goes through on the bottom so panko won\'t get crushed). Bake until the pork is no longer pink inside, about 20 minutes.\r\n10. To make special sesame tonkatsu sauce, grind black and white sesame seeds in a mortar and add tonkatsu sauce. Mix all together.\r\n', '', 0, 0, 0),
 (27, 27, 'Bulgogi', 'Main', '2018-03-22 14:43:13', '2', 'Korea', '112.jpg', '1. Mix all the marinade ingredients in a bowl.\r\n2. Add the sliced beef and mix well.\r\n3. You can grill, pan-fry, or BBQ right after marinating, but it’s best to keep it in the fridge and let it marinate for at least 30 minutes, or overnight for a tougher cut of beef. Serve with ssamjang.\r\n\r\n', '', 0, 0, 0),
 (28, 28, 'Bibimbap', 'Main', '2018-03-22 14:43:13', '2', 'Korea', '113.jpg', '. HOW TO PREPARE DRIES FERNBRAKE (GOSARI) FOR USE: \r\n•	If you have presoaked or fresh fernbrake you can use it straight away, but if you have dried fernbrake you\'ll need to get it ready to eat. It\'s fast if you have a pressure cooker, but if you don’t it will take some time\r\n2. RICE:\r\n•	Rinse 2 cups of rice in cold water and scrub the wet rice with your hand. Rinse and drain until the drained water is pretty clear\r\n•	Put the rice in a heavy-bottomed pot. Add 2 cups of water, cover, and soak for 30 minutes.\r\n•	Cook over medium high heat for 7 to 8 minutes until the surface is covered with abundant bubbles that are spluttering noisily and look like they\'re about to overflow the pot. Turn the rice over a few times with a spoon and cover the pot again\r\n•	Turn the heat to very low and simmer for another 10 minutes until the rice is fully cooked and fluffy. Remove from the heat\r\n•	Fluff the rice with a spoon to release excess steam. Let the rice stand, covered, at room temperature to keep it warm\r\n3. SOYBEAN SPROUTS: \r\n•	Put the soy bean sprouts in a pot and add 4 cups water and 2 or 3 teaspoons salt. Cover and cook for 20 minutes over medium high heat. Take out the sprouts with tongs and put them into a bowl, leaving about 1/2 cup of sprouts in the pot with the water you used to boil them. This is the soup to serve with bibimbap later\r\n•	In a bowl, mix the sprouts by hand with 1/2 teaspoons salt, 1 teaspoon minced garlic, and 2 teaspoons sesame oil. Put them on the large platter.\r\n4. SPINACH: \r\n•	Clean the mushrooms with damp towel and slice them.Crack 3 eggs in a bowl and add 1/4 teaspoon salt. Beat it with fork and remove the stringy chalaza.Cut up the blanched spinach a few times and put it in a bowl. Mix by hand with 1 teaspoon garlic, 1 teaspoon sesame oil, 1/2 teaspoon salt, and 1 teaspoon sesame seeds. Cover and put it next to the soy bean sprouts on the platter.\r\n5. OTHER FRESH VEGTABLES: \r\n•	Cut the carrot into matchsticks, put them in a bowl, and mix with a pinch of salt. Let stand for 5 to 10 minutes until sweating.\r\n•	Cut the red bell pepper into halves, deseed, and slice into strips. Put them in a bowl.\r\n•	Cut the zucchini into matchsticks and mix with ½ teaspoon salt.\r\n•	Cut the cucumber into halves lengthwise and slice thinly crosswise. Mix with 1/4 teaspoon salt.\r\n6. BEEF: \r\nCut the beef into matchsticks and put them in a bowl. Then mix with 1 tablespoon minced garlic, 1 tablespoon soy sauce, 1 tablespoon honey, 2 teaspoons sesame oil, and 1 teaspoon sesame seeds with a spoon. Cover and keep in the fridge until ready to use.\r\n 7. MOUNTAIN VEGTABLES:\r\nCut the fernbrake (gosari) a few times into bite size pieces. Set aside. Put the bellflower roots (doraji) in a large bowl. Add 1 or 2 tablespoons salt. Rub for a minute to wilt slightly and release some of the bitterness. Rinse them in cold water a couple of times and drain. If you find some roots are too thick, split them lengthwise. Set aside.\r\nLET\'S COOK! \r\n•	Heat up a pan over medium high heat. Squeeze out excess water from the carrot. Add a few drops of cooking oil to the pan and saute the carrot for 1 minute. Put it on the platter next to the soy bean sprouts and spinach. Clean the pan with wet paper towel or wash it. \r\n•	Heat a few drops of cooking oil in the pan and squeeze out the excess water from the cucumber. Saute with 1/2 teaspoon minced garlic and a few drops of sesame oil for 30 seconds. Put it on the platter. Clean the pan.\r\n•	Heat up the pan with a few drops of cooking oil. Add the red bell pepper and sprinkle a pinch of salt over top. Saute for 30 seconds. Put it on the platter. Clean the pan.\r\n•	Heat up the pan and squeeze out excess water from the zucchini. Add a few drops of cooking oil and saute with 1 teaspoon minced garlic, 1 tablespoon chopped green onion, a drop of sesame oil for 1 minute until slightly softened. Put it on the platter. Clean the pan. \r\n•	Heat up the pan with a few drops of cooking oil. Add the bellflower roots and saute for 2 to 3 minutes. Lower the heat to medium so as not to brown them. Add 1 teaspoon minced garlic and a drop of sesame oil. Stir for another minute until a little softened. Put it on the platter. Clean the pan. \r\n•	Put some sesame oil on the finshed rolls and sprinkle some sesame seeds over top. Cut each roll into 1/4 inch bite size pieces with a sharp knife, occasionally wiping it with a wet paper towel or cloth to clean the starch off and to ease cutting.\r\n•	Heat up the pan. Add a few drops of cooking oil. Stir the gosari for 2 minutes until a little softened. Add 1/2 teaspoon of minced garlic, 2 teaspoons soy sauce, and 2 teaspoons sugar, and keep stirring for another minute. Put it on the platter.\r\n', '', 0, 0, 0),
-(29, 29, 'Gimbap', 'Main', '2018-03-22 14:43:13', '2', 'Korea', '114.jpg', 'Rice:\r\n1.	Place freshly made rice in a large, shallow bowl. Gently mix in ½ teaspoon salt and 2 teaspoons sesame oil over top with a rice scoop or a wooden spoon.\r\n2.	Let it cool down enough so it’s no longer steaming. Cover and set aside.\r\nSpinach:\r\n1.	Combine the blanched spinach, 2 minced garlic cloves, ½ teaspoon salt, and 2 teaspoons sesame oil in a bowl.\r\n2.	Mix well by hand and put it on a large platter with the sliced yellow pickled radish.\r\nCarrots:\r\n1.	Combine the carrot matchsticks with ¼ teaspoon salt. Mix well and let it sweat for 5 to 10 minutes. Heat a pan and add a few drops vegetable oil.\r\n2.	Squeeze out excess water from the carrot, then saute for about 1 minute. Put it on the platter next to the spinach.\r\nSteaks:\r\n1.	Trim the fat from the skirt steaks and slice into ¼ inch wide, 3 to 5 inch strips. Put the strips into a bowl. Add 2 teaspoons soy sauce, 1 minced garlic clove, ¼ teaspoon ground black pepper,1 tablespoon plus 1 teaspoon brown (or white) sugar, and 2 teaspoons sesame oil.\r\n2.	Mix well by hand.\r\n3.	Set aside, and let them marinate while we do the egg strips.\r\nEggs:\r\n1.	Crack 3 eggs in a bowl and add ¼ teaspoon salt. Beat it with fork and remove the stringy chalaza.\r\n2.	Drizzle a few drops of oil on a heated 10 to 12 inch non-stick pan. Wipe off the excess with a paper towel so only a thin sheen of oil remains. Turn down the heat to low and pour the egg mixture into the pan. Spread it into a large circle so it fills the pan.\r\n•  When the bottom of the egg is cooked, flip it over with a spatula. Remove from the heat and let it cook slowly in the hot pan for about 5 minutes, with the ultimate goal of keeping the egg as yellow as possible, and not brown. \r\n•  Cut it into ½ inch wide strips. Put it next to the spinach on the platter.\r\nFinish steaks:\r\n1.	Heat up a pan over medium high heat and cook the marinated beef, stirring it with a wooden spoon until well cooked.\r\n\r\n2.	Set aside.\r\nLet’s roll gimbap!\r\n1.	Place a sheet of gim on a bamboo mat with the shiny side down. Evenly spread about ¾ cup of cooked rice over top of it, leaving about 2 inches uncovered on one side of the gim.\r\n2.	Place beef, carrot, yellow pickled radish strip, a few egg strips, and spinach in the center of the rice.\r\n3.	Use both hands to roll the mat (along with gim and rice) over the fillings, so one edge of the rice and gim reaches the opposite edge. This centers the fillings in the roll, so they’ll be nicely in the middle when you slice it.\r\n4.	 Grab the mat with both hands and and press it tightly as you continue rolling the gimbap. Push out the mat as you roll, so it doesn’t get wrapped in the gimbap.\r\n5.	 Remove the roll from the mat at the end and set the finished roll aside with the seam down, to seal it nicely. \r\n6.	Repeat 4 more times with the remaining ingredients. \r\n7.	 Put some sesame oil on the finshed rolls and sprinkle some sesame seeds over top. Cut each roll into ¼ inch bite size pieces with a sharp knife, occasionally wiping it with a wet paper towel or cloth to clean the starch off and to ease cutting.Put it on a plate and serve immediately or pack it in a lunchbox.\r\n', '', 0, 0, 0);
+(29, 29, 'Gimbap', 'Main', '2018-03-22 14:43:13', '2', 'Korea', '114.jpg', 'Rice:\r\n1.	Place freshly made rice in a large, shallow bowl. Gently mix in ½ teaspoon salt and 2 teaspoons sesame oil over top with a rice scoop or a wooden spoon.\r\n2.	Let it cool down enough so it’s no longer steaming. Cover and set aside.\r\nSpinach:\r\n1.	Combine the blanched spinach, 2 minced garlic cloves, ½ teaspoon salt, and 2 teaspoons sesame oil in a bowl.\r\n2.	Mix well by hand and put it on a large platter with the sliced yellow pickled radish.\r\nCarrots:\r\n1.	Combine the carrot matchsticks with ¼ teaspoon salt. Mix well and let it sweat for 5 to 10 minutes. Heat a pan and add a few drops vegetable oil.\r\n2.	Squeeze out excess water from the carrot, then saute for about 1 minute. Put it on the platter next to the spinach.\r\nSteaks:\r\n1.	Trim the fat from the skirt steaks and slice into ¼ inch wide, 3 to 5 inch strips. Put the strips into a bowl. Add 2 teaspoons soy sauce, 1 minced garlic clove, ¼ teaspoon ground black pepper,1 tablespoon plus 1 teaspoon brown (or white) sugar, and 2 teaspoons sesame oil.\r\n2.	Mix well by hand.\r\n3.	Set aside, and let them marinate while we do the egg strips.\r\nEggs:\r\n1.	Crack 3 eggs in a bowl and add ¼ teaspoon salt. Beat it with fork and remove the stringy chalaza.\r\n2.	Drizzle a few drops of oil on a heated 10 to 12 inch non-stick pan. Wipe off the excess with a paper towel so only a thin sheen of oil remains. Turn down the heat to low and pour the egg mixture into the pan. Spread it into a large circle so it fills the pan.\r\n•  When the bottom of the egg is cooked, flip it over with a spatula. Remove from the heat and let it cook slowly in the hot pan for about 5 minutes, with the ultimate goal of keeping the egg as yellow as possible, and not brown. \r\n•  Cut it into ½ inch wide strips. Put it next to the spinach on the platter.\r\nFinish steaks:\r\n1.	Heat up a pan over medium high heat and cook the marinated beef, stirring it with a wooden spoon until well cooked.\r\n\r\n2.	Set aside.\r\nLet’s roll gimbap!\r\n1.	Place a sheet of gim on a bamboo mat with the shiny side down. Evenly spread about ¾ cup of cooked rice over top of it, leaving about 2 inches uncovered on one side of the gim.\r\n2.	Place beef, carrot, yellow pickled radish strip, a few egg strips, and spinach in the center of the rice.\r\n3.	Use both hands to roll the mat (along with gim and rice) over the fillings, so one edge of the rice and gim reaches the opposite edge. This centers the fillings in the roll, so they’ll be nicely in the middle when you slice it.\r\n4.	 Grab the mat with both hands and and press it tightly as you continue rolling the gimbap. Push out the mat as you roll, so it doesn’t get wrapped in the gimbap.\r\n5.	 Remove the roll from the mat at the end and set the finished roll aside with the seam down, to seal it nicely. \r\n6.	Repeat 4 more times with the remaining ingredients. \r\n7.	 Put some sesame oil on the finshed rolls and sprinkle some sesame seeds over top. Cut each roll into ¼ inch bite size pieces with a sharp knife, occasionally wiping it with a wet paper towel or cloth to clean the starch off and to ease cutting.Put it on a plate and serve immediately or pack it in a lunchbox.\r\n', '', 0, 0, 0),
+(30, 30, 'Ice Cubes', 'Condiments', '2018-03-23 06:13:24', '3', 'Antartica', '0.jpeg', '1. Get a small, insulated cooler you can fit inside your freezer.\r\n2. Get plastic molds. You’ll use these to freeze your chunks of ice. The blue molds in the video are 2 x 2 x 5 inches; if you want cubes, look at these.\r\n3. Put the molds into the cooler, arranged into lines.\r\n4. Fill the entire cooler with water, so that the molds are flooded. Put the cooler into the freezer with the lid open or removed.\r\n5. Wait until the block is frozen all the way through. Yes, it’s a slow process. Then remove the cooler and the ice block inside. (If it sticks, let it thaw a little.) Set the block in a clean plastic bucket, and leave it out for an hour or so to let it temper.\r\n6. Cut out the molds. Using a serrated knife, carefully score the block in between some molds. Use a mallet on the back of the knife blade to carefully split the ice. If it’s starts cracking like crazy, let it temper a little longer.\r\n7. Once the molds are free, you should be able to slide the blocks of ice out of them pretty easily. If they don’t come out easily, let them warm just a little. The ice that comes out should be almost perfectly clear. There may be some clouding at the top, but this can be cut out using the serrated knife method in the step above.', 'An ice cube is a small, roughly cube-shaped piece of ice (frozen water), conventionally used to cool beverages.', 30, 10, 20);
 
 -- --------------------------------------------------------
 
@@ -393,19 +397,19 @@ ALTER TABLE `customer_address`
 -- AUTO_INCREMENT for table `customer_order`
 --
 ALTER TABLE `customer_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `ing_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ing_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `recipe`
 --
 ALTER TABLE `recipe`
-  MODIFY `r_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `r_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `region`
