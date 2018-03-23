@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2018 at 04:11 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 5.6.31
+-- Generation Time: Mar 23, 2018 at 05:52 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `food_corner`
 --
-CREATE DATABASE IF NOT EXISTS `food_corner` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `food_corner`;
 
 -- --------------------------------------------------------
 
@@ -30,7 +28,6 @@ USE `food_corner`;
 -- Table structure for table `customer`
 --
 
-DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
   `c_id` int(11) NOT NULL,
   `acc_type` varchar(60) NOT NULL,
@@ -49,7 +46,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`c_id`, `acc_type`, `c_address_id`, `c_fname`, `c_mname`, `c_lname`, `c_pno`, `c_email`, `c_pass`, `time_created`) VALUES
-(26, 'user', 26, NULL, NULL, NULL, '9236825841', 'primebeast@ymail.com', '202cb962ac59075b964b07152d234b70', '2018-03-21 09:09:48'),
+(26, 'admin', 26, NULL, NULL, NULL, '9236825841', 'primebeast@ymail.com', '202cb962ac59075b964b07152d234b70', '2018-03-21 09:09:48'),
 (27, 'user', 27, NULL, NULL, NULL, '09353703879', 'genesys0880@gmail.com', '7590e72e87d43394fabd7fc79bfc6197', '2018-03-22 13:31:13');
 
 -- --------------------------------------------------------
@@ -58,7 +55,6 @@ INSERT INTO `customer` (`c_id`, `acc_type`, `c_address_id`, `c_fname`, `c_mname`
 -- Table structure for table `customer_address`
 --
 
-DROP TABLE IF EXISTS `customer_address`;
 CREATE TABLE `customer_address` (
   `caddress_id` int(11) NOT NULL,
   `address` varchar(255) NOT NULL,
@@ -86,7 +82,6 @@ INSERT INTO `customer_address` (`caddress_id`, `address`, `c_id`, `address_id`) 
 -- Table structure for table `customer_order`
 --
 
-DROP TABLE IF EXISTS `customer_order`;
 CREATE TABLE `customer_order` (
   `order_id` int(11) NOT NULL,
   `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -114,7 +109,6 @@ INSERT INTO `customer_order` (`order_id`, `order_date`, `order_price`, `order_co
 -- Table structure for table `customer_payment`
 --
 
-DROP TABLE IF EXISTS `customer_payment`;
 CREATE TABLE `customer_payment` (
   `payment_id` varchar(60) NOT NULL,
   `c_id` varchar(60) NOT NULL,
@@ -128,9 +122,8 @@ CREATE TABLE `customer_payment` (
 -- Table structure for table `ingredients`
 --
 
-DROP TABLE IF EXISTS `ingredients`;
 CREATE TABLE `ingredients` (
-  `ing_id` varchar(60) NOT NULL,
+  `ing_id` int(11) NOT NULL,
   `s_id` int(11) NOT NULL,
   `ing_name` varchar(60) NOT NULL,
   `ing_quantity` varchar(60) NOT NULL,
@@ -143,8 +136,9 @@ CREATE TABLE `ingredients` (
 --
 
 INSERT INTO `ingredients` (`ing_id`, `s_id`, `ing_name`, `ing_quantity`, `ing_unit`, `ing_price`) VALUES
-('1', 1, 'Tomato', '34', 'kg', '6'),
-('2', 1, 'Potato', '34', 'kg', '6');
+(1, 1, 'Tomato', '34', 'kg', '6'),
+(2, 1, 'Potato', '34', 'kg', '6'),
+(3, 0, 'Patatas', '', 'kg', '');
 
 -- --------------------------------------------------------
 
@@ -152,7 +146,6 @@ INSERT INTO `ingredients` (`ing_id`, `s_id`, `ing_name`, `ing_quantity`, `ing_un
 -- Table structure for table `ingridients_list`
 --
 
-DROP TABLE IF EXISTS `ingridients_list`;
 CREATE TABLE `ingridients_list` (
   `ing_list_id` int(11) NOT NULL,
   `ing_id` int(11) NOT NULL,
@@ -176,7 +169,6 @@ INSERT INTO `ingridients_list` (`ing_list_id`, `ing_id`, `amount`) VALUES
 -- Table structure for table `my_cart`
 --
 
-DROP TABLE IF EXISTS `my_cart`;
 CREATE TABLE `my_cart` (
   `c_id` varchar(255) NOT NULL,
   `r_id` bigint(20) NOT NULL,
@@ -190,7 +182,6 @@ CREATE TABLE `my_cart` (
 -- Table structure for table `order_delivery`
 --
 
-DROP TABLE IF EXISTS `order_delivery`;
 CREATE TABLE `order_delivery` (
   `deliver_id` varchar(60) NOT NULL,
   `order_id` varchar(60) NOT NULL,
@@ -203,7 +194,6 @@ CREATE TABLE `order_delivery` (
 -- Table structure for table `order_list`
 --
 
-DROP TABLE IF EXISTS `order_list`;
 CREATE TABLE `order_list` (
   `list_id` int(11) NOT NULL,
   `r_id` int(11) NOT NULL,
@@ -228,7 +218,6 @@ INSERT INTO `order_list` (`list_id`, `r_id`, `price`) VALUES
 -- Table structure for table `recipe`
 --
 
-DROP TABLE IF EXISTS `recipe`;
 CREATE TABLE `recipe` (
   `r_id` bigint(20) NOT NULL,
   `ing_list_id` bigint(20) NOT NULL,
@@ -284,11 +273,10 @@ INSERT INTO `recipe` (`r_id`, `ing_list_id`, `r_name`, `r_type`, `r_time_created
 -- Table structure for table `region`
 --
 
-DROP TABLE IF EXISTS `region`;
 CREATE TABLE `region` (
   `region_id` int(11) NOT NULL,
   `region_name` varchar(255) NOT NULL,
-  `region_photo` varchar(255) NOT NULL,
+  `region_photo` varchar(255) NOT NULL DEFAULT 'assets/Recipe/img/rec1.jpg',
   `region_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -298,7 +286,8 @@ CREATE TABLE `region` (
 
 INSERT INTO `region` (`region_id`, `region_name`, `region_photo`, `region_description`) VALUES
 (1, 'West', 'assets/Recipe/img/rec1.jpg', 'Find the best, easy fast meal ideas from Western food recipes.'),
-(2, 'East', 'assets/Recipe/img/rec1.jpg', 'Find the best, easy fast meal ideas from Eastern food recipes.');
+(2, 'East', 'assets/Recipe/img/rec1.jpg', 'Find the best, easy fast meal ideas from Eastern food recipes.'),
+(3, 'North', 'assets/Recipe/img/rec1.jpg', 'Northern Dishes');
 
 -- --------------------------------------------------------
 
@@ -306,7 +295,6 @@ INSERT INTO `region` (`region_id`, `region_name`, `region_photo`, `region_descri
 -- Table structure for table `suppliers`
 --
 
-DROP TABLE IF EXISTS `suppliers`;
 CREATE TABLE `suppliers` (
   `s_id` varchar(60) NOT NULL,
   `s_name` varchar(60) NOT NULL
@@ -394,26 +382,37 @@ ALTER TABLE `suppliers`
 --
 ALTER TABLE `customer`
   MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
 --
 -- AUTO_INCREMENT for table `customer_address`
 --
 ALTER TABLE `customer_address`
   MODIFY `caddress_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
 --
 -- AUTO_INCREMENT for table `customer_order`
 --
 ALTER TABLE `customer_order`
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `ingredients`
+--
+ALTER TABLE `ingredients`
+  MODIFY `ing_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `recipe`
 --
 ALTER TABLE `recipe`
   MODIFY `r_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
 --
 -- AUTO_INCREMENT for table `region`
 --
 ALTER TABLE `region`
-  MODIFY `region_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `region_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
