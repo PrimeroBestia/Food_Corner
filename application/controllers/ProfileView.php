@@ -25,9 +25,10 @@ class ProfileView extends CI_Controller {
 	}
 	public function addresses()
 	{
+		$data['addresses'] =$this->customer_model->get_address();
 		if(isset($_SESSION['email'])){
 			$this->load->view('template/headerlogin');
-			$this->load->view('UserProfile/addresses');
+			$this->load->view('UserProfile/addresses',$data);
 			$this->load->view('template/footer');
 		}
 		else{
@@ -123,6 +124,15 @@ class ProfileView extends CI_Controller {
 			$this->load->view('template/headerlogin');
 			$this->load->view('UserProfile/myaccount');
 			$this->load->view('template/footer');
+		}
+		else{
+			redirect(base_url());
+		}
+	}
+	public function cpassword()
+	{
+		if(isset($_SESSION['email'])){
+			$this->customer_model->update_pass();
 		}
 		else{
 			redirect(base_url());

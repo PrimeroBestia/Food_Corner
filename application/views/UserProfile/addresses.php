@@ -18,11 +18,26 @@
 
 			<div class="down-content">
 				<h2>My Addresses</h2>
+				<div class="content">
 				<div class="textalign">
-					<h4>You don't have addresses yet</h4>
-					<div class="newaddress">
-						<a href="#modal-address" class="btn-newaddress">Add New Address</a>
+					<div class="textalign">
+						<?php if(empty($addresses)):?>
+							<h4>NO ADDRESS YET</h4>
+						<?php else:?>
+							<?php //Table for Orders?>
+							<table class="table-info">
+								<tr>
+									<td><h4>Addresses</h4></td>
+								</tr>
+								<?php foreach ($addresses as $address): ?>
+									<tr>
+										<td>|<?php echo $address['address']?></td>
+									</tr>
+								<?php endforeach; ?>
+							</table>
+						<?php endif;?>
 					</div>
 				</div>
+			</div>
 			</div>
 	</div>
